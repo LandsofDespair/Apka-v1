@@ -1,9 +1,13 @@
 package com.example.daniel.myapplication;
 
+import android.app.Dialog;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.content.DialogInterface;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,23 +21,27 @@ public class MainActivity extends AppCompatActivity {
         counterTextView = (TextView)findViewById(R.id.counterTextView);
     }
 
-    public void openDialog() {
-        final Dialog dialog = new Dialog(context); // Context, this, etc.
-        dialog.setContentView(R.layout.dialog_demo);
-        dialog.setTitle(R.string.dialog_title);
-        dialog.show();
-    }
-
     public void PlusButtonClicked(View view) {
-        if(counterValue==5)
-            openDialog()
-        else
-        counterValue++;
-        counterTextView.setText(String.valueOf(counterValue));
+        if(counterValue==5) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setTitle(R.string.przekroczono_zakres).setPositiveButton("OK", null);
+            builder.show();
+        }
+        else {
+            counterValue++;
+            counterTextView.setText(String.valueOf(counterValue));
+        }
     }
 
     public void MinusButtonClicked(View view) {
-        counterValue--;
-        counterTextView.setText(String.valueOf(counterValue));
+        if(counterValue==0) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setTitle(R.string.przekroczono_zakres).setPositiveButton("OK", null);
+            builder.show();
+        }
+        else {
+            counterValue--;
+            counterTextView.setText(String.valueOf(counterValue));
+        }
     }
 }
