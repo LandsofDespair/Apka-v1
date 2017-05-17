@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.daniel.scrolltest3.MainActivity">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10px" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10px" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="600dp"
+                android:layout_height="1000dp"
+                android:background="@drawable/karap"
+                android:visibility="visible"
+                android:scaleX="1"
+                android:scaleY="1"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/Gracz"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:background="@android:color/transparent"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="79dp"
+                android:layout_marginTop="50dp"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Wprowadź"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:id="@+id/Kampania"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="112dp"
+                android:layout_marginTop="72dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Wprowadź"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/MistrzGry"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="230dp"
+                android:layout_marginTop="72dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Wprowadź"
+                android:inputType="textPersonName"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/Imie"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="104dp"
+                android:layout_marginTop="140dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Wprowadź"
+                android:inputType="textPersonName"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+
+
+            <EditText
+                android:id="@+id/Rasa"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="104dp"
+                android:layout_marginTop="158dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Wprowadź"
+                android:inputType="textPersonName"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/Profesja"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="104dp"
+                android:layout_marginTop="175dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Wprowadź"
+                android:inputType="textPersonName"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/Sylwetka"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="104dp"
+                android:layout_marginTop="192dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Wprowadź"
+                android:inputType="textPersonName"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/Znaki"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="144dp"
+                android:layout_marginTop="208dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Wprowadź"
+                android:inputType="textPersonName"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/Wiek"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="294dp"
+                android:layout_marginTop="141dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Wprowadź"
+                android:inputType="textPersonName"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/Wzrost"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="294dp"
+                android:layout_marginTop="158dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Wprowadź"
+                android:inputType="textPersonName"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/Waga"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="294dp"
+                android:layout_marginTop="175dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Wprowadź"
+                android:inputType="textPersonName"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/Pochodzenie"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="294dp"
+                android:layout_marginTop="192dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Wprowadź"
+                android:inputType="textPersonName"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/Rodzina"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="483dp"
+                android:layout_marginTop="192dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Wprowadź"
+                android:inputType="textPersonName"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/KolorSkory"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="483dp"
+                android:layout_marginTop="175dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Wprowadź"
+                android:inputType="textPersonName"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/KolorOczu"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="483dp"
+                android:layout_marginTop="158dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Wprowadź"
+                android:inputType="textPersonName"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/KolorWlosow"
+                android:layout_width="102dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="483dp"
+                android:layout_marginTop="141dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Wprowadź"
+                android:inputType="textPersonName"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/counterTextViewStr"
+                android:text="0"
+                android:textSize="10dp"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="143dp"
+                android:layout_marginTop="292dp"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/MinusButtonStr"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:clickable="true"
+                android:onClick="MinusButtonStrClicked"
+                app:backgroundTint="@android:color/background_dark"
+                app:fabSize="mini"
+                app:srcCompat="@android:drawable/button_onoff_indicator_off"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="294dp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/PlusButtonStr"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:clickable="true"
+                android:onClick="PlusButtonStrClicked"
+                app:backgroundTint="@android:color/background_dark"
+                app:fabSize="mini"
+                app:srcCompat="@android:drawable/button_onoff_indicator_off"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="154dp"
+                android:layout_marginTop="294dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/counterTextViewEnd"
+                android:text="0"
+                android:textSize="10dp"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="143dp"
+                android:layout_marginTop="304dp"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/MinusButtonEnd"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:clickable="true"
+                android:onClick="MinusButtonEndClicked"
+                app:backgroundTint="@android:color/background_dark"
+                app:fabSize="mini"
+                app:srcCompat="@android:drawable/button_onoff_indicator_off"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="307dp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/PlusButtonEnd"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:clickable="true"
+                android:onClick="PlusButtonEndClicked"
+                app:backgroundTint="@android:color/background_dark"
+                app:fabSize="mini"
+                app:srcCompat="@android:drawable/button_onoff_indicator_off"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="154dp"
+                android:layout_marginTop="307dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/counterTextViewKon"
+                android:text="0"
+                android:textSize="10dp"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="143dp"
+                android:layout_marginTop="318dp"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/MinusButtonKon"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:clickable="true"
+                android:onClick="MinusButtonKonClicked"
+                app:backgroundTint="@android:color/background_dark"
+                app:fabSize="mini"
+                app:srcCompat="@android:drawable/button_onoff_indicator_off"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="320dp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/PlusButtonKon"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:clickable="true"
+                android:onClick="PlusButtonKonClicked"
+                app:backgroundTint="@android:color/background_dark"
+                app:fabSize="mini"
+                app:srcCompat="@android:drawable/button_onoff_indicator_off"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="154dp"
+                android:layout_marginTop="320dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/counterTextViewAgi"
+                android:text="0"
+                android:textSize="10dp"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="143dp"
+                android:layout_marginTop="331dp"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/MinusButtonAgi"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:clickable="true"
+                android:onClick="MinusButtonAgiClicked"
+                app:backgroundTint="@android:color/background_dark"
+                app:fabSize="mini"
+                app:srcCompat="@android:drawable/button_onoff_indicator_off"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="334dp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/PlusButtonAgi"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:clickable="true"
+                android:onClick="PlusButtonAgiClicked"
+                app:backgroundTint="@android:color/background_dark"
+                app:fabSize="mini"
+                app:srcCompat="@android:drawable/button_onoff_indicator_off"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="154dp"
+                android:layout_marginTop="334dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/counterTextViewInt"
+                android:text="0"
+                android:textSize="10dp"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="143dp"
+                android:layout_marginTop="345dp"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/MinusButtonInt"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:clickable="true"
+                android:onClick="MinusButtonIntClicked"
+                app:backgroundTint="@android:color/background_dark"
+                app:fabSize="mini"
+                app:srcCompat="@android:drawable/button_onoff_indicator_off"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="348dp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/PlusButtonInt"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:clickable="true"
+                android:onClick="PlusButtonIntClicked"
+                app:backgroundTint="@android:color/background_dark"
+                app:fabSize="mini"
+                app:srcCompat="@android:drawable/button_onoff_indicator_off"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="154dp"
+                android:layout_marginTop="348dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/counterTextViewWil"
+                android:text="0"
+                android:textSize="10dp"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="143dp"
+                android:layout_marginTop="357dp"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/MinusButtonWil"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:clickable="true"
+                android:onClick="MinusButtonWilClicked"
+                app:backgroundTint="@android:color/background_dark"
+                app:fabSize="mini"
+                app:srcCompat="@android:drawable/button_onoff_indicator_off"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="361dp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/PlusButtonWil"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:clickable="true"
+                android:onClick="PlusButtonWilClicked"
+                app:backgroundTint="@android:color/background_dark"
+                app:fabSize="mini"
+                app:srcCompat="@android:drawable/button_onoff_indicator_off"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="154dp"
+                android:layout_marginTop="361dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/counterTextViewCha"
+                android:text="0"
+                android:textSize="10dp"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="143dp"
+                android:layout_marginTop="371dp"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/MinusButtonCha"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:clickable="true"
+                android:onClick="MinusButtonChaClicked"
+                app:backgroundTint="@android:color/background_dark"
+                app:fabSize="mini"
+                app:srcCompat="@android:drawable/button_onoff_indicator_off"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="374dp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/PlusButtonCha"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:clickable="true"
+                android:onClick="PlusButtonChaClicked"
+                app:backgroundTint="@android:color/background_dark"
+                app:fabSize="mini"
+                app:srcCompat="@android:drawable/button_onoff_indicator_off"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="154dp"
+                android:layout_marginTop="374dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/counterTextViewAll"
+                android:text="0"
+                android:textSize="10dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginStart="171dp"
+                android:layout_marginTop="305dp"/>
+
+            <EditText
+                android:id="@+id/valueExperience"
+                android:layout_width="90dp"
+                android:layout_height="18dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="439dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Aktualne Punkty"
+                android:textAlignment="center"
+                android:inputType="number"
+                android:textSize="10dp" />
+
+            <EditText
+                android:id="@+id/valueExperienceAll"
+                android:layout_width="110dp"
+                android:layout_height="18dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="83dp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="469dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Całkowite Doświadczneie"
+                android:textAlignment="center"
+                android:inputType="number"
+                android:textSize="10dp" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="152dp"
+                android:text="CheckBox"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/valueExperienceAddSub"
+                android:layout_toEndOf="@+id/valueExperienceAddSub" />
+
+            <EditText
+                android:id="@+id/Weapon1"
+                android:layout_width="95dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="73dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Broń1"
+                android:textAlignment="center"
+                android:inputType="text"
+                android:textSize="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="32dp"
+                android:layout_marginStart="32dp" />
+
+            <EditText
+                android:id="@+id/Weapon1Damage"
+                android:layout_width="20dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="565dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="DMG"
+                android:textAlignment="center"
+                android:inputType="number"
+                android:textSize="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="132dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+    </HorizontalScrollView>
+
+
+
+
+</RelativeLayout>
