@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.daniel.scrolltest3.MainMenu">
+
+    <ImageButton
+        android:id="@+id/napis"
+        android:layout_width="305dp"
+        android:layout_height="85dp"
+        android:clickable="true"
+        android:onClick="kartyPostaciClicked"
+        android:src="@drawable/karta"
+        tools:layout_editor_absoluteY="27dp"
+        tools:layout_editor_absoluteX="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/appbar_scrolling_view_behavior"/>
+
+    <ImageButton
+        android:id="@+id/dices"
+        android:layout_width="305dp"
+        android:layout_height="85dp"
+        android:clickable="true"
+        android:onClick="dicesClicked"
+        android:src="@drawable/dices"
+        tools:layout_editor_absoluteY="87dp"
+        tools:layout_editor_absoluteX="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:contentDescription="@string/appbar_scrolling_view_behavior"/>
+
+
+</RelativeLayout>

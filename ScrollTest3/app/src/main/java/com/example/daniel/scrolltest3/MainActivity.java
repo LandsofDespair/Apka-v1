@@ -1,5 +1,6 @@
 package com.example.daniel.scrolltest3;
 
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,7 +30,14 @@ public class MainActivity extends AppCompatActivity {
 
 //Deklaracja value Experience
 
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(MainActivity.this, MainMenu.class));
+        finish();
 
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

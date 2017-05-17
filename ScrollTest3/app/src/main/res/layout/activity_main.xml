@@ -1691,7 +1691,7 @@
                 android:scaleY="0.5"
                 android:text="" />
 
-            <EditText
+            <TextView
                 android:id="@+id/LesserWound"
                 android:layout_width="95dp"
                 android:layout_height="15dp"
@@ -1771,7 +1771,7 @@
                 android:scaleY="0.5"
                 android:text="" />
 
-            <EditText
+            <TextView
                 android:id="@+id/Wound"
                 android:layout_width="95dp"
                 android:layout_height="15dp"
@@ -1851,7 +1851,7 @@
                 android:scaleY="0.5"
                 android:text="" />
 
-            <EditText
+            <TextView
                 android:id="@+id/GreaterWound"
                 android:layout_width="95dp"
                 android:layout_height="15dp"
@@ -1931,7 +1931,7 @@
                 android:scaleY="0.5"
                 android:text="" />
 
-            <EditText
+            <TextView
                 android:id="@+id/Burn"
                 android:layout_width="95dp"
                 android:layout_height="15dp"
@@ -2011,7 +2011,7 @@
                 android:scaleY="0.5"
                 android:text="" />
 
-            <EditText
+            <TextView
                 android:id="@+id/Freeze"
                 android:layout_width="95dp"
                 android:layout_height="15dp"
@@ -2091,7 +2091,7 @@
                 android:scaleY="0.5"
                 android:text="" />
 
-            <EditText
+            <TextView
                 android:id="@+id/Poison"
                 android:layout_width="95dp"
                 android:layout_height="15dp"
@@ -2171,7 +2171,7 @@
                 android:scaleY="0.5"
                 android:text="" />
 
-            <EditText
+            <TextView
                 android:id="@+id/Bleed"
                 android:layout_width="95dp"
                 android:layout_height="15dp"
