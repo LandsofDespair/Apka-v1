@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.daniel.scrolltest3.MainActivity">
+    tools:context="com.example.daniel.scrolltest3.Karta1">
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -3170,9 +3170,20 @@
                 android:scaleX="0.5"
                 android:scaleY="0.5"
                 android:text="" />
+
         </RelativeLayout>
     </ScrollView>
     </HorizontalScrollView>
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="460dp"
+        android:layout_marginLeft="328dp"
+        android:clickable="true"
+        android:onClick="reverse"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
 </RelativeLayout>

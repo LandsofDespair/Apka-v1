@@ -55,8 +55,9 @@ public class StartupMenu extends AppCompatActivity {
     }
 
     public void napisClicked(View view) {
-        startActivity(new Intent().setClass(StartupMenu.this, MainMenu.class).setData(getIntent().getData()));
-        finish();
+        startActivity(new Intent(this,MainMenu.class));
     }
+
+
 
 }

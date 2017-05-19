@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context="com.example.daniel.scrolltest3.MainMenu">
 
     <ImageButton
-        android:id="@+id/napis"
+        android:id="@+id/buttonkartypostaci"
         android:layout_width="305dp"
         android:layout_height="85dp"
         android:clickable="true"
         android:onClick="kartyPostaciClicked"
-        android:src="@drawable/karta"
+        android:src="@drawable/buttonkartpostaciclicked"
+        android:state_pressed="true" android:drawable="@drawable/buttonkartpostaciclicked"
         tools:layout_editor_absoluteY="27dp"
         tools:layout_editor_absoluteX="40dp"
         android:layout_alignParentTop="true"
@@ -26,7 +28,7 @@
         android:layout_height="85dp"
         android:clickable="true"
         android:onClick="dicesClicked"
-        android:src="@drawable/dices"
+        android:src="@drawable/buttondiceroller"
         tools:layout_editor_absoluteY="87dp"
         tools:layout_editor_absoluteX="40dp"
         android:layout_alignParentTop="true"
@@ -34,5 +36,36 @@
         android:layout_marginTop="130dp"
         android:contentDescription="@string/appbar_scrolling_view_behavior"/>
 
+    <ImageButton
+        android:id="@+id/katypostaci"
+        android:layout_width="305dp"
+        android:layout_height="85dp"
+        android:clickable="true"
+        android:onClick="landsclicked"
+        android:src="@drawable/buttonwebpage"
+        tools:layout_editor_absoluteY="147dp"
+        tools:layout_editor_absoluteX="40dp"
+        android:layout_marginTop="27dp"
+        android:contentDescription="@string/appbar_scrolling_view_behavior"
+        android:layout_below="@+id/dices"
+        android:layout_alignLeft="@+id/dices"
+        android:layout_alignStart="@+id/dices" />
+
+    <ImageButton
+        android:id="@+id/webpagelands"
+        android:layout_width="305dp"
+        android:layout_height="85dp"
+        android:clickable="true"
+        android:onClick="webpagelandsClicked"
+        android:src="@drawable/landsofdespair"
+        tools:layout_editor_absoluteY="247dp"
+        tools:layout_editor_absoluteX="40dp"
+        android:layout_marginTop="25dp"
+        android:contentDescription="@string/appbar_scrolling_view_behavior"
+        android:layout_below="@+id/katypostaci"
+        android:layout_alignLeft="@+id/katypostaci"
+        android:layout_alignStart="@+id/katypostaci"/>
+
 
 </RelativeLayout>
+

@@ -4,13 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.util.Random;
-
-public class Dices extends AppCompatActivity {
+public class Karta1_2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed()
@@ -22,10 +17,11 @@ public class Dices extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dices);
+        setContentView(R.layout.activity_karta1_2);
     }
 
-
+    public void reverse(View view) {
+        this.finish();
+    }
 }

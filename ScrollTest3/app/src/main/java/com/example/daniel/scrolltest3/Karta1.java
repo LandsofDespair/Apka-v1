@@ -5,10 +5,9 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class Karta1 extends AppCompatActivity {
 
 //Deklaracja counterów Atrybutów
     private int counterValueStr = 0;
@@ -34,15 +33,15 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
-        startActivity(new Intent(MainActivity.this, MainMenu.class));
-        finish();
+        this.finish();
 
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_karta1);
 
 //Przypisanie findViewById dla Atrybutów
         counterTextViewStr = (TextView)findViewById(R.id.counterTextViewStr);
@@ -62,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 //Nabijanie countera Atrybutu - Strengh
     public void PlusButtonStrClicked(View view) {
         if(counterValueStr==5) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
             builder.show();
         }
@@ -74,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void MinusButtonStrClicked(View view) {
         if(counterValueStr==0) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
             builder.show();
         }
@@ -87,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     //Nabijanie countera Atrybutu - Endurance
     public void PlusButtonEndClicked(View view) {
         if(counterValueEnd==5) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
             builder.show();
         }
@@ -99,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void MinusButtonEndClicked(View view) {
         if(counterValueEnd==0) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
             builder.show();
         }
@@ -112,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
 //Nabijanie countera Atrybutu - Kondition
     public void PlusButtonKonClicked(View view) {
         if(counterValueKon==5) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
             builder.show();
         }
@@ -124,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void MinusButtonKonClicked(View view) {
         if(counterValueKon==0) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
             builder.show();
         }
@@ -137,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 //Nabijanie countera Atrybutu - Agility
     public void PlusButtonAgiClicked(View view) {
         if(counterValueAgi==5) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
             builder.show();
         }
@@ -149,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void MinusButtonAgiClicked(View view) {
         if(counterValueAgi==0) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
             builder.show();
         }
@@ -162,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
 //Nabijanie countera Atrybutu - Intelligence
     public void PlusButtonIntClicked(View view) {
         if(counterValueInt==5) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
             builder.show();
         }
@@ -174,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void MinusButtonIntClicked(View view) {
         if(counterValueInt==0) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
             builder.show();
         }
@@ -187,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
 //Nabijanie countera Atrybutu - Will
     public void PlusButtonWilClicked(View view) {
         if(counterValueWil==5) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
             builder.show();
         }
@@ -199,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void MinusButtonWilClicked(View view) {
         if(counterValueWil==0) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
             builder.show();
         }
@@ -212,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
 //Nabijanie countera Atrybutu - Charysma
     public void PlusButtonChaClicked(View view) {
         if(counterValueCha==5) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
             builder.show();
         }
@@ -224,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void MinusButtonChaClicked(View view) {
         if(counterValueCha==0) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
             builder.show();
         }
@@ -237,4 +236,8 @@ public class MainActivity extends AppCompatActivity {
 //Nabijanie value Experience
     public void buttonExperienceAddClicked(View view) {
         }
+
+    public void reverse(View view) {
+        startActivity(new Intent(this,Karta1_2.class));
+    }
 }
