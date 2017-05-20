@@ -1,6 +1,7 @@
 package com.example.daniel.scrolltest3;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -30,6 +31,11 @@ public class WebPage extends Activity {
             }
         });
 
+    }
+
+    public void backbuttonClicked(View view) {
+
+        this.finish();
     }
 
 }
