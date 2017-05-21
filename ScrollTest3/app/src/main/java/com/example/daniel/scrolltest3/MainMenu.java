@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 
+import junit.framework.Test;
+
 import java.util.ArrayList;
 
 public class MainMenu extends AppCompatActivity {
@@ -45,9 +47,10 @@ public class MainMenu extends AppCompatActivity {
         startActivity(new Intent(this,WebPage.class));
     }
 
-    public void webpagelandsClicked(View view){
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.landsofdespair.pl"));
-        startActivity(browserIntent);
+    public void webpagelandsClicked(View view) {
+        startActivity(new Intent(this,Test2.class));
     }
+
+
 
 }

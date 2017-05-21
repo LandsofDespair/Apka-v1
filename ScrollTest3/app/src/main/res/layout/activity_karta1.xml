@@ -42,6 +42,7 @@
                 android:textStyle="bold"
                 android:ems="10"
                 android:inputType="textPersonName"
+                android:text="Gracz"
                 android:hint="Wprowadź"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
@@ -3179,14 +3180,18 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="450dp"
+        android:layout_marginBottom="30dp"
         android:layout_marginLeft="312dp"
-        android:scaleType="center"
-        android:scaleX="1.2"
-        android:scaleY="1.2"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="450dp"
         android:clickable="true"
-        android:onClick="reverse"
-        app:fabSize="mini"
-        app:srcCompat="@android:drawable/ic_menu_revert" />
+        android:onClick="save"
+        android:scaleType="center"
+        android:scaleX="3"
+        android:scaleY="3"
+        app:fabSize="normal"
+        app:srcCompat="@android:drawable/ic_menu_save" />
+
+
 
 </RelativeLayout>

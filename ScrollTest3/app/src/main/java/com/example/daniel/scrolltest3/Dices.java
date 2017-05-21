@@ -55,14 +55,9 @@ public class Dices extends Activity implements View.OnClickListener {
     ImageView smoczakostka1x1;
     ImageView smoczakostka2;
     ImageView smoczakostka2x2;
-    ImageView smoczakostka2x3;
-    ImageView smoczakostka3x0x0x0;
-    ImageView smoczakostka3x0x0x1;
-    ImageView smoczakostka3x0x1x0;
-    ImageView smoczakostka3x1x0x0;
-    ImageView smoczakostka3x1x1x0;
-    ImageView smoczakostka3x0x1x1;
-    ImageView smoczakostka3x1x1x1;
+    ImageView smoczakostka3x1;
+    ImageView smoczakostka3x2;
+    ImageView smoczakostka3x3;
     ImageView smoczakostka4x1;
     ImageView smoczakostka4x2;
     ImageView smoczakostka4x3;
@@ -92,14 +87,9 @@ public class Dices extends Activity implements View.OnClickListener {
         smoczakostka1x1 = (ImageView) findViewById(R.id.smoczakostka1x1);
         smoczakostka2 = (ImageView) findViewById(R.id.smoczakostka2);
         smoczakostka2x2 = (ImageView) findViewById(R.id.smoczakostka2x2);
-        smoczakostka2x3 = (ImageView) findViewById(R.id.smoczakostka2x3);
-        smoczakostka3x0x0x0 = (ImageView) findViewById(R.id.smoczakostka3x0x0x0);
-        smoczakostka3x1x0x0 = (ImageView) findViewById(R.id.smoczakostka3x1x0x0);
-        smoczakostka3x0x1x0 = (ImageView) findViewById(R.id.smoczakostka3x0x1x0);
-        smoczakostka3x0x0x1 = (ImageView) findViewById(R.id.smoczakostka3x0x0x1);
-        smoczakostka3x1x1x0 = (ImageView) findViewById(R.id.smoczakostka3x1x1x0);
-        smoczakostka3x0x1x1 = (ImageView) findViewById(R.id.smoczakostka3x0x1x1);
-        smoczakostka3x1x1x1 = (ImageView) findViewById(R.id.smoczakostka3x1x1x1);
+        smoczakostka3x1 = (ImageView) findViewById(R.id.smoczakostka3x1);
+        smoczakostka3x2 = (ImageView) findViewById(R.id.smoczakostka3x2);
+        smoczakostka3x3 = (ImageView) findViewById(R.id.smoczakostka3x3);
         smoczakostka4x1 = (ImageView) findViewById(R.id.smoczakostka4x1);
         smoczakostka4x2 = (ImageView) findViewById(R.id.smoczakostka4x2);
         smoczakostka4x3 = (ImageView) findViewById(R.id.smoczakostka4x3);
@@ -515,44 +505,80 @@ public class Dices extends Activity implements View.OnClickListener {
     }
 
     public void smoczakostka2buttonClicked(View view) {
-        smoczakostka2.setVisibility(View.GONE);
-        smoczakostka2x2.setVisibility(View.GONE);
-        smoczakostka2x3.setVisibility(View.GONE);
+        smoczakostka2.setImageResource(R.drawable.successdice);
+        smoczakostka2x2.setImageResource(R.drawable.successdice);
+        smoczakostka2.setVisibility(View.VISIBLE);
+        smoczakostka2x2.setVisibility(View.VISIBLE);
         Random random = new Random();
-        int random1 = random.nextInt(3 - 1 + 1) + 1;
+        int random1 = random.nextInt(4 - 1 + 1) + 1;
         if (random1 == 1) {
-            smoczakostka2.setVisibility(View.VISIBLE);
+            smoczakostka2.setImageResource(R.drawable.successdicex);
+            smoczakostka2x2.setImageResource(R.drawable.successdicex);
         } else if (random1 == 2) {
-            smoczakostka2x2.setVisibility(View.VISIBLE);
+            smoczakostka2.setImageResource(R.drawable.successdicex);
         } else {
-            smoczakostka2x3.setVisibility(View.VISIBLE);
+            if (random1 == 3) {
+                smoczakostka2x2.setImageResource(R.drawable.successdicex);
+            } else if(random1 == 4){
+
+            }
         }
     }
 
     public void smoczakostka3buttonClicked(View view) {
-        smoczakostka3x0x0x0.setVisibility(View.GONE);
-        smoczakostka3x1x0x0.setVisibility(View.GONE);
-        smoczakostka3x0x1x0.setVisibility(View.GONE);
-        smoczakostka3x0x0x1.setVisibility(View.GONE);
-        smoczakostka3x1x1x0.setVisibility(View.GONE);
-        smoczakostka3x0x1x1.setVisibility(View.GONE);
-        smoczakostka3x1x1x1.setVisibility(View.GONE);
+        smoczakostka3x1.setImageResource(R.drawable.successdice);
+        smoczakostka3x2.setImageResource(R.drawable.successdice);
+        smoczakostka3x3.setImageResource(R.drawable.successdice);
+        smoczakostka3x1.setVisibility(View.GONE);
+        smoczakostka3x2.setVisibility(View.GONE);
+        smoczakostka3x3.setVisibility(View.GONE);
         Random random = new Random();
-        int random1 = random.nextInt(7 - 1 + 1) + 1;
+        int random1 = random.nextInt(8 - 1 + 1) + 1;
         if (random1 == 1) {
-            smoczakostka3x0x0x0.setVisibility(View.VISIBLE);
+            smoczakostka3x1.setImageResource(R.drawable.successdicex);
+            smoczakostka3x2.setImageResource(R.drawable.successdicex);
+            smoczakostka3x3.setImageResource(R.drawable.successdicex);
+            smoczakostka3x1.setVisibility(View.VISIBLE);
+            smoczakostka3x2.setVisibility(View.VISIBLE);
+            smoczakostka3x3.setVisibility(View.VISIBLE);
         } else if (random1 == 2) {
-            smoczakostka3x1x0x0.setVisibility(View.VISIBLE);
+            smoczakostka3x2.setImageResource(R.drawable.successdicex);
+            smoczakostka3x3.setImageResource(R.drawable.successdicex);
+            smoczakostka3x1.setVisibility(View.VISIBLE);
+            smoczakostka3x2.setVisibility(View.VISIBLE);
+            smoczakostka3x3.setVisibility(View.VISIBLE);
         } else if (random1 == 3) {
-            smoczakostka3x0x1x0.setVisibility(View.VISIBLE);
+            smoczakostka3x1.setImageResource(R.drawable.successdicex);
+            smoczakostka3x3.setImageResource(R.drawable.successdicex);
+            smoczakostka3x1.setVisibility(View.VISIBLE);
+            smoczakostka3x2.setVisibility(View.VISIBLE);
+            smoczakostka3x3.setVisibility(View.VISIBLE);
         } else if (random1 == 4) {
-            smoczakostka3x0x0x1.setVisibility(View.VISIBLE);
+            smoczakostka3x1.setImageResource(R.drawable.successdicex);
+            smoczakostka3x2.setImageResource(R.drawable.successdicex);
+            smoczakostka3x1.setVisibility(View.VISIBLE);
+            smoczakostka3x2.setVisibility(View.VISIBLE);
+            smoczakostka3x3.setVisibility(View.VISIBLE);
         } else if (random1 == 5) {
-            smoczakostka3x1x1x0.setVisibility(View.VISIBLE);
+            smoczakostka3x3.setImageResource(R.drawable.successdicex);
+            smoczakostka3x1.setVisibility(View.VISIBLE);
+            smoczakostka3x2.setVisibility(View.VISIBLE);
+            smoczakostka3x3.setVisibility(View.VISIBLE);
         } else if (random1 == 6) {
-            smoczakostka3x0x1x1.setVisibility(View.VISIBLE);
+            smoczakostka3x1.setImageResource(R.drawable.successdicex);
+            smoczakostka3x1.setVisibility(View.VISIBLE);
+            smoczakostka3x2.setVisibility(View.VISIBLE);
+            smoczakostka3x3.setVisibility(View.VISIBLE);
         } else if (random1 == 7) {
-            smoczakostka3x1x1x1.setVisibility(View.VISIBLE);
+            smoczakostka3x2.setImageResource(R.drawable.successdicex);
+            smoczakostka3x1.setVisibility(View.VISIBLE);
+            smoczakostka3x2.setVisibility(View.VISIBLE);
+            smoczakostka3x3.setVisibility(View.VISIBLE);
+        }
+        else if(random1 == 8){
+            smoczakostka3x1.setVisibility(View.VISIBLE);
+            smoczakostka3x2.setVisibility(View.VISIBLE);
+            smoczakostka3x3.setVisibility(View.VISIBLE);
         }
     }
 
@@ -562,7 +588,7 @@ public class Dices extends Activity implements View.OnClickListener {
         smoczakostka4x3.setImageResource(R.drawable.successdice);
         smoczakostka4x4.setImageResource(R.drawable.successdice);
         Random random = new Random();
-        int random1 = random.nextInt(15 - 1 + 1) + 1;
+        int random1 = random.nextInt(18 - 1 + 1) + 1;
         if (random1 == 1) {
             smoczakostka4x1.setImageResource(R.drawable.successdicex);
             smoczakostka4x2.setImageResource(R.drawable.successdicex);
@@ -670,6 +696,27 @@ public class Dices extends Activity implements View.OnClickListener {
             smoczakostka4x3.setVisibility(View.VISIBLE);
             smoczakostka4x4.setVisibility(View.VISIBLE);
         } else if (random1 == 15) {
+            smoczakostka4x1.setVisibility(View.VISIBLE);
+            smoczakostka4x2.setVisibility(View.VISIBLE);
+            smoczakostka4x3.setVisibility(View.VISIBLE);
+            smoczakostka4x4.setVisibility(View.VISIBLE);
+        }
+        else if (random1 == 16) {
+            smoczakostka4x1.setImageResource(R.drawable.successdicex);
+            smoczakostka4x1.setVisibility(View.VISIBLE);
+            smoczakostka4x2.setVisibility(View.VISIBLE);
+            smoczakostka4x3.setVisibility(View.VISIBLE);
+            smoczakostka4x4.setVisibility(View.VISIBLE);
+        }
+        else if (random1 == 17) {
+            smoczakostka4x2.setImageResource(R.drawable.successdicex);
+            smoczakostka4x1.setVisibility(View.VISIBLE);
+            smoczakostka4x2.setVisibility(View.VISIBLE);
+            smoczakostka4x3.setVisibility(View.VISIBLE);
+            smoczakostka4x4.setVisibility(View.VISIBLE);
+        }
+        else if (random1 == 18){
+            smoczakostka4x3.setImageResource(R.drawable.successdicex);
             smoczakostka4x1.setVisibility(View.VISIBLE);
             smoczakostka4x2.setVisibility(View.VISIBLE);
             smoczakostka4x3.setVisibility(View.VISIBLE);

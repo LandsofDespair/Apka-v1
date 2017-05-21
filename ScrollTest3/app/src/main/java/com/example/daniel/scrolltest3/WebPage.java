@@ -9,6 +9,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class WebPage extends Activity {
 
@@ -17,6 +18,9 @@ public class WebPage extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_page);
+
+        Toast.makeText(getBaseContext(), "Strona zostanie wkrótce wyświetlona",
+                Toast.LENGTH_LONG).show();
 
         webView = (WebView) findViewById(R.id.webView1);
         webView.getSettings().setJavaScriptEnabled(true);
