@@ -13,7 +13,17 @@ import android.widget.Toast;
 
 public class WebPage extends Activity {
 
+    boolean doubleBackToExitPressedOnce = false;
     private WebView webView;
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            this.finish();
+        }
+        finish();
+        startActivity(new Intent(this, WebPage.class));
+    }
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

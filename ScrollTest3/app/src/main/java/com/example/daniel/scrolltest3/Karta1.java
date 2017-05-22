@@ -11,6 +11,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -98,6 +99,90 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
     private CheckBox Weapon3Durability3;
     private CheckBox Weapon3Durability4;
     private CheckBox Weapon3Durability5;
+    private CheckBox LesserWoundChekbox1;
+    private CheckBox LesserWoundChekbox2;
+    private CheckBox LesserWoundChekbox3;
+    private CheckBox LesserWoundChekbox4;
+    private CheckBox LesserWoundChekbox5;
+    private CheckBox WoundChekbox1;
+    private CheckBox WoundChekbox2;
+    private CheckBox WoundChekbox3;
+    private CheckBox WoundChekbox4;
+    private CheckBox WoundChekbox5;
+    private CheckBox GreaterWoundChekbox1;
+    private CheckBox GreaterWoundChekbox2;
+    private CheckBox GreaterWoundChekbox3;
+    private CheckBox GreaterWoundChekbox4;
+    private CheckBox GreaterWoundChekbox5;
+    private CheckBox BronKrotka1;
+    private CheckBox BronKrotka2;
+    private CheckBox BronKrotka3;
+    private CheckBox BronLekka1;
+    private CheckBox BronLekka2;
+    private CheckBox BronLekka3;
+    private CheckBox BronCiezka1;
+    private CheckBox BronCiezka2;
+    private CheckBox BronCiezka3;
+    private CheckBox BronDrzewcowa1;
+    private CheckBox BronDrzewcowa2;
+    private CheckBox BronDrzewcowa3;
+    private CheckBox Obrona1;
+    private CheckBox Obrona2;
+    private CheckBox Obrona3;
+    private CheckBox Strzelectwo1;
+    private CheckBox Strzelectwo2;
+    private CheckBox Strzelectwo3;
+    private CheckBox Perswazja1;
+    private CheckBox Perswazja2;
+    private CheckBox Perswazja3;
+    private CheckBox Cwaniactwo1;
+    private CheckBox Cwaniactwo2;
+    private CheckBox Cwaniactwo3;
+    private CheckBox Handel1;
+    private CheckBox Handel2;
+    private CheckBox Handel3;
+    private CheckBox Etykieta1;
+    private CheckBox Etykieta2;
+    private CheckBox Etykieta3;
+    private CheckBox Przetrwanie1;
+    private CheckBox Przetrwanie2;
+    private CheckBox Przetrwanie3;
+    private CheckBox Atletyka1;
+    private CheckBox Atletyka2;
+    private CheckBox Atletyka3;
+    private CheckBox Oburecznosc1;
+    private CheckBox Oburecznosc2;
+    private CheckBox Oburecznosc3;
+    private CheckBox Percepcja1;
+    private CheckBox Percepcja2;
+    private CheckBox Percepcja3;
+    private CheckBox Podstepy1;
+    private CheckBox Podstepy2;
+    private CheckBox Podstepy3;
+    private CheckBox Leczenie1;
+    private CheckBox Leczenie2;
+    private CheckBox Leczenie3;
+    private CheckBox Zbieractwo1;
+    private CheckBox Zbieractwo2;
+    private CheckBox Zbieractwo3;
+    private CheckBox Magia1;
+    private CheckBox Magia2;
+    private CheckBox Magia3;
+    private CheckBox Kowalstwo1;
+    private CheckBox Kowalstwo2;
+    private CheckBox Kowalstwo3;
+    private CheckBox Ciesielstwo1;
+    private CheckBox Ciesielstwo2;
+    private CheckBox Ciesielstwo3;
+    private CheckBox Alchemia1;
+    private CheckBox Alchemia2;
+    private CheckBox Alchemia3;
+    private CheckBox Gotowanie1;
+    private CheckBox Gotowanie2;
+    private CheckBox Gotowanie3;
+    private CheckBox Krawiectwo1;
+    private CheckBox Krawiectwo2;
+    private CheckBox Krawiectwo3;
     static final int READ_BLOCK_SIZE = 100;
     private TextView Weapon1DurabilityCheck;
 
@@ -112,6 +197,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_karta1);
@@ -163,6 +249,90 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         Weapon3Durability3 = (CheckBox) findViewById(R.id.Weapon3Durability3);
         Weapon3Durability4 = (CheckBox) findViewById(R.id.Weapon3Durability4);
         Weapon3Durability5 = (CheckBox) findViewById(R.id.Weapon3Durability5);
+        LesserWoundChekbox1 = (CheckBox) findViewById(R.id.LesserWoundChekbox1);
+        LesserWoundChekbox2 = (CheckBox) findViewById(R.id.LesserWoundChekbox2);
+        LesserWoundChekbox3 = (CheckBox) findViewById(R.id.LesserWoundChekbox3);
+        LesserWoundChekbox4 = (CheckBox) findViewById(R.id.LesserWoundChekbox4);
+        LesserWoundChekbox5 = (CheckBox) findViewById(R.id.LesserWoundChekbox5);
+        WoundChekbox1 = (CheckBox) findViewById(R.id.WoundChekbox1);
+        WoundChekbox2 = (CheckBox) findViewById(R.id.WoundChekbox2);
+        WoundChekbox3 = (CheckBox) findViewById(R.id.WoundChekbox3);
+        WoundChekbox4 = (CheckBox) findViewById(R.id.WoundChekbox4);
+        WoundChekbox5 = (CheckBox) findViewById(R.id.WoundChekbox5);
+        GreaterWoundChekbox1 = (CheckBox) findViewById(R.id.GreaterWoundChekbox1);
+        GreaterWoundChekbox2 = (CheckBox) findViewById(R.id.GreaterWoundChekbox2);
+        GreaterWoundChekbox3 = (CheckBox) findViewById(R.id.GreaterWoundChekbox3);
+        GreaterWoundChekbox4 = (CheckBox) findViewById(R.id.GreaterWoundChekbox4);
+        GreaterWoundChekbox5 = (CheckBox) findViewById(R.id.GreaterWoundChekbox5);
+        BronKrotka1 = (CheckBox) findViewById(R.id.BronKrotka1);
+        BronKrotka2 = (CheckBox) findViewById(R.id.BronKrotka2);
+        BronKrotka3 = (CheckBox) findViewById(R.id.BronKrotka3);
+        BronLekka1 = (CheckBox) findViewById(R.id.BronLekka1);
+        BronLekka2 = (CheckBox) findViewById(R.id.BronLekka2);
+        BronLekka3 = (CheckBox) findViewById(R.id.BronLekka3);
+        BronCiezka1 = (CheckBox) findViewById(R.id.BronCiezka1);
+        BronCiezka2 = (CheckBox) findViewById(R.id.BronCiezka2);
+        BronCiezka3 = (CheckBox) findViewById(R.id.BronCiezka3);
+        BronDrzewcowa1 = (CheckBox) findViewById(R.id.BronDrzewcowa1);
+        BronDrzewcowa2 = (CheckBox) findViewById(R.id.BronDrzewcowa2);
+        BronDrzewcowa3 = (CheckBox) findViewById(R.id.BronDrzewcowa3);
+        Obrona1 = (CheckBox) findViewById(R.id.Obrona1);
+        Obrona2 = (CheckBox) findViewById(R.id.Obrona2);
+        Obrona3 = (CheckBox) findViewById(R.id.Obrona3);
+        Strzelectwo1 = (CheckBox) findViewById(R.id.Strzelectwo1);
+        Strzelectwo2 = (CheckBox) findViewById(R.id.Strzelectwo2);
+        Strzelectwo3 = (CheckBox) findViewById(R.id.Strzelectwo3);
+        Perswazja1 = (CheckBox) findViewById(R.id.Perswazja1);
+        Perswazja2 = (CheckBox) findViewById(R.id.Perswazja2);
+        Perswazja3 = (CheckBox) findViewById(R.id.Perswazja3);
+        Cwaniactwo1 = (CheckBox) findViewById(R.id.Cwaniactwo1);
+        Cwaniactwo2 = (CheckBox) findViewById(R.id.Cwaniactwo2);
+        Cwaniactwo3 = (CheckBox) findViewById(R.id.Cwaniactwo3);
+        Handel1 = (CheckBox) findViewById(R.id.Handel1);
+        Handel2 = (CheckBox) findViewById(R.id.Handel2);
+        Handel3 = (CheckBox) findViewById(R.id.Handel3);
+        Etykieta1 = (CheckBox) findViewById(R.id.Etykieta1);
+        Etykieta2 = (CheckBox) findViewById(R.id.Etykieta2);
+        Etykieta3 = (CheckBox) findViewById(R.id.Etykieta3);
+        Przetrwanie1 = (CheckBox) findViewById(R.id.Przetrwanie1);
+        Przetrwanie2 = (CheckBox) findViewById(R.id.Przetrwanie2);
+        Przetrwanie3 = (CheckBox) findViewById(R.id.Przetrwanie3);
+        Atletyka1 = (CheckBox) findViewById(R.id.Atletyka1);
+        Atletyka2 = (CheckBox) findViewById(R.id.Atletyka2);
+        Atletyka3 = (CheckBox) findViewById(R.id.Atletyka3);
+        Oburecznosc1 = (CheckBox) findViewById(R.id.Oburecznosc1);
+        Oburecznosc2 = (CheckBox) findViewById(R.id.Oburecznosc2);
+        Oburecznosc3 = (CheckBox) findViewById(R.id.Oburecznosc3);
+        Percepcja1 = (CheckBox) findViewById(R.id.Percepcja1);
+        Percepcja2 = (CheckBox) findViewById(R.id.Percepcja2);
+        Percepcja3 = (CheckBox) findViewById(R.id.Percepcja3);
+        Podstepy1 = (CheckBox) findViewById(R.id.Podstepy1);
+        Podstepy2 = (CheckBox) findViewById(R.id.Podstepy2);
+        Podstepy3 = (CheckBox) findViewById(R.id.Podstepy3);
+        Leczenie1 = (CheckBox) findViewById(R.id.Leczenie1);
+        Leczenie2 = (CheckBox) findViewById(R.id.Leczenie2);
+        Leczenie3 = (CheckBox) findViewById(R.id.Leczenie3);
+        Zbieractwo1 = (CheckBox) findViewById(R.id.Zbieractwo1);
+        Zbieractwo2 = (CheckBox) findViewById(R.id.Zbieractwo2);
+        Zbieractwo3 = (CheckBox) findViewById(R.id.Zbieractwo3);
+        Magia1 = (CheckBox) findViewById(R.id.Magia1);
+        Magia2 = (CheckBox) findViewById(R.id.Magia2);
+        Magia3 = (CheckBox) findViewById(R.id.Magia3);
+        Kowalstwo1 = (CheckBox) findViewById(R.id.Kowalstwo1);
+        Kowalstwo2 = (CheckBox) findViewById(R.id.Kowalstwo2);
+        Kowalstwo3 = (CheckBox) findViewById(R.id.Kowalstwo3);
+        Ciesielstwo1 = (CheckBox) findViewById(R.id.Ciesielstwo1);
+        Ciesielstwo2 = (CheckBox) findViewById(R.id.Ciesielstwo2);
+        Ciesielstwo3 = (CheckBox) findViewById(R.id.Ciesielstwo3);
+        Alchemia1 = (CheckBox) findViewById(R.id.Alchemia1);
+        Alchemia2 = (CheckBox) findViewById(R.id.Alchemia2);
+        Alchemia3 = (CheckBox) findViewById(R.id.Alchemia3);
+        Gotowanie1 = (CheckBox) findViewById(R.id.Gotowanie1);
+        Gotowanie2 = (CheckBox) findViewById(R.id.Gotowanie2);
+        Gotowanie3 = (CheckBox) findViewById(R.id.Gotowanie3);
+        Krawiectwo1 = (CheckBox) findViewById(R.id.Krawiectwo1);
+        Krawiectwo2 = (CheckBox) findViewById(R.id.Krawiectwo2);
+        Krawiectwo3 = (CheckBox) findViewById(R.id.Krawiectwo3);
         try {
             load();
         } catch (IOException e) {
@@ -354,6 +524,87 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
             saveChecked("Weapon3Durability3", Weapon3Durability3.isChecked());
             saveChecked("Weapon3Durability4", Weapon3Durability4.isChecked());
             saveChecked("Weapon3Durability5", Weapon3Durability5.isChecked());
+            saveChecked("LesserWoundChekbox1", LesserWoundChekbox1.isChecked());
+            saveChecked("LesserWoundChekbox2", LesserWoundChekbox2.isChecked());
+            saveChecked("LesserWoundChekbox3", LesserWoundChekbox3.isChecked());
+            saveChecked("LesserWoundChekbox4", LesserWoundChekbox4.isChecked());
+            saveChecked("LesserWoundChekbox5", LesserWoundChekbox5.isChecked());
+            saveChecked("WoundChekbox1", WoundChekbox1.isChecked());
+            saveChecked("WoundChekbox2", WoundChekbox2.isChecked());
+            saveChecked("WoundChekbox3", WoundChekbox3.isChecked());
+            saveChecked("WoundChekbox4", WoundChekbox4.isChecked());
+            saveChecked("WoundChekbox5", WoundChekbox5.isChecked());
+            saveChecked("GreaterWoundChekbox1", GreaterWoundChekbox1.isChecked());
+            saveChecked("GreaterWoundChekbox2", GreaterWoundChekbox2.isChecked());
+            saveChecked("GreaterWoundChekbox3", GreaterWoundChekbox3.isChecked());
+            saveChecked("GreaterWoundChekbox4", GreaterWoundChekbox4.isChecked());
+            saveChecked("GreaterWoundChekbox5", GreaterWoundChekbox5.isChecked());
+            saveChecked("BronKrotka1", BronKrotka1.isChecked());
+            saveChecked("BronKrotka2", BronKrotka2.isChecked());
+            saveChecked("BronKrotka3", BronKrotka3.isChecked());
+            saveChecked("BronLekka1", BronLekka1.isChecked());
+            saveChecked("BronLekka1", BronLekka2.isChecked());
+            saveChecked("BronLekka1", BronLekka3.isChecked());
+            saveChecked("BronCiezka1", BronCiezka1.isChecked());
+            saveChecked("BronCiezka2", BronCiezka2.isChecked());
+            saveChecked("BronCiezka3", BronCiezka3.isChecked());
+            saveChecked("BronDrzewcowa1", BronDrzewcowa1.isChecked());
+            saveChecked("BronDrzewcowa2", BronDrzewcowa2.isChecked());
+            saveChecked("BronDrzewcowa3", BronDrzewcowa3.isChecked());
+            saveChecked("Obrona1", Obrona1.isChecked());
+            saveChecked("Obrona2", Obrona2.isChecked());
+            saveChecked("Obrona3", Obrona3.isChecked());
+            saveChecked("Strzelectwo1", Strzelectwo1.isChecked());
+            saveChecked("Strzelectwo2", Strzelectwo2.isChecked());
+            saveChecked("Strzelectwo3", Strzelectwo3.isChecked());
+            saveChecked("Perswazja1", Perswazja1.isChecked());
+            saveChecked("Perswazja2", Perswazja2.isChecked());
+            saveChecked("Perswazja3", Perswazja3.isChecked());
+            saveChecked("Cwaniactwo1", Cwaniactwo1.isChecked());
+            saveChecked("Cwaniactwo2", Cwaniactwo2.isChecked());
+            saveChecked("Cwaniactwo3", Cwaniactwo3.isChecked());
+            saveChecked("Handel1", Handel1.isChecked());
+            saveChecked("Handel2", Handel2.isChecked());
+            saveChecked("Handel3", Handel3.isChecked());
+            saveChecked("Etykieta1", Etykieta1.isChecked());
+            saveChecked("Etykieta2", Etykieta2.isChecked());
+            saveChecked("Etykieta3", Etykieta3.isChecked());
+            saveChecked("Przetrwanie1", Przetrwanie1.isChecked());
+            saveChecked("Przetrwanie2", Przetrwanie2.isChecked());
+            saveChecked("Przetrwanie3", Przetrwanie3.isChecked());
+            saveChecked("Atletyka1", Atletyka1.isChecked());
+            saveChecked("Atletyka2", Atletyka2.isChecked());
+            saveChecked("Atletyka3", Atletyka3.isChecked());
+            saveChecked("Oburecznosc1", Oburecznosc1.isChecked());
+            saveChecked("Oburecznosc2", Oburecznosc2.isChecked());
+            saveChecked("Oburecznosc3", Oburecznosc3.isChecked());
+            saveChecked("Percepcja1", Percepcja1.isChecked());
+            saveChecked("Percepcja2", Percepcja2.isChecked());
+            saveChecked("Percepcja3", Percepcja3.isChecked());
+            saveChecked("Podstepy1", Podstepy1.isChecked());
+            saveChecked("Podstepy2", Podstepy2.isChecked());
+            saveChecked("Podstepy3", Podstepy3.isChecked());
+            saveChecked("Leczenie1", Leczenie1.isChecked());
+            saveChecked("Leczenie2", Leczenie2.isChecked());
+            saveChecked("Leczenie3", Leczenie3.isChecked());
+            saveChecked("Magia1", Magia1.isChecked());
+            saveChecked("Magia2", Magia2.isChecked());
+            saveChecked("Magia3", Magia3.isChecked());
+            saveChecked("Kowalstwo1", Kowalstwo1.isChecked());
+            saveChecked("Kowalstwo2", Kowalstwo2.isChecked());
+            saveChecked("Kowalstwo3", Kowalstwo3.isChecked());
+            saveChecked("Ciesielstwo1", Ciesielstwo1.isChecked());
+            saveChecked("Ciesielstwo2", Ciesielstwo2.isChecked());
+            saveChecked("Ciesielstwo3", Ciesielstwo3.isChecked());
+            saveChecked("Alchemia1", Alchemia1.isChecked());
+            saveChecked("Alchemia2", Alchemia2.isChecked());
+            saveChecked("Alchemia3", Alchemia3.isChecked());
+            saveChecked("Gotowanie1", Gotowanie1.isChecked());
+            saveChecked("Gotowanie2", Gotowanie2.isChecked());
+            saveChecked("Gotowanie3", Gotowanie3.isChecked());
+            saveChecked("Krawiectwo1", Krawiectwo1.isChecked());
+            saveChecked("Krawiectwo2", Krawiectwo2.isChecked());
+            saveChecked("Krawiectwo3", Krawiectwo3.isChecked());
         } catch (Exception e) {
             e.printStackTrace();
         };
@@ -387,6 +638,87 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         Weapon3Durability3.setChecked(loadChecked("Weapon3Durability3"));
         Weapon3Durability4.setChecked(loadChecked("Weapon3Durability4"));
         Weapon3Durability5.setChecked(loadChecked("Weapon3Durability5"));
+        LesserWoundChekbox1.setChecked(loadChecked("LesserWoundChekbox1"));
+        LesserWoundChekbox2.setChecked(loadChecked("LesserWoundChekbox2"));
+        LesserWoundChekbox3.setChecked(loadChecked("LesserWoundChekbox3"));
+        LesserWoundChekbox4.setChecked(loadChecked("LesserWoundChekbox4"));
+        LesserWoundChekbox5.setChecked(loadChecked("LesserWoundChekbox5"));
+        WoundChekbox1.setChecked(loadChecked("WoundChekbox1"));
+        WoundChekbox2.setChecked(loadChecked("WoundChekbox2"));
+        WoundChekbox3.setChecked(loadChecked("WoundChekbox3"));
+        WoundChekbox4.setChecked(loadChecked("WoundChekbox4"));
+        WoundChekbox5.setChecked(loadChecked("WoundChekbox5"));
+        GreaterWoundChekbox1.setChecked(loadChecked("GreaterWoundChekbox1"));
+        GreaterWoundChekbox2.setChecked(loadChecked("GreaterWoundChekbox2"));
+        GreaterWoundChekbox3.setChecked(loadChecked("GreaterWoundChekbox3"));
+        GreaterWoundChekbox4.setChecked(loadChecked("GreaterWoundChekbox4"));
+        GreaterWoundChekbox5.setChecked(loadChecked("GreaterWoundChekbox5"));
+        BronKrotka1.setChecked(loadChecked("BronKrotka1"));
+        BronKrotka2.setChecked(loadChecked("BronKrotka2"));
+        BronKrotka3.setChecked(loadChecked("BronKrotka3"));
+        BronLekka1.setChecked(loadChecked("BronLekka1"));
+        BronLekka2.setChecked(loadChecked("BronLekka2"));
+        BronLekka3.setChecked(loadChecked("BronLekka3"));
+        BronCiezka1.setChecked(loadChecked("BronCiezka1"));
+        BronCiezka2.setChecked(loadChecked("BronCiezka2"));
+        BronCiezka3.setChecked(loadChecked("BronCiezka3"));
+        BronDrzewcowa1.setChecked(loadChecked("BronDrzewcowa1"));
+        BronDrzewcowa2.setChecked(loadChecked("BronDrzewcowa2"));
+        BronDrzewcowa3.setChecked(loadChecked("BronDrzewcowa3"));
+        Obrona1.setChecked(loadChecked("Obrona1"));
+        Obrona2.setChecked(loadChecked("Obrona2"));
+        Obrona3.setChecked(loadChecked("Obrona3"));
+        Strzelectwo1.setChecked(loadChecked("Strzelectwo1"));
+        Strzelectwo2.setChecked(loadChecked("Strzelectwo2"));
+        Strzelectwo3.setChecked(loadChecked("Strzelectwo3"));
+        Perswazja1.setChecked(loadChecked("Perswazja1"));
+        Perswazja2.setChecked(loadChecked("Perswazja2"));
+        Perswazja3.setChecked(loadChecked("Perswazja3"));
+        Cwaniactwo1.setChecked(loadChecked("Cwaniactwo1"));
+        Cwaniactwo2.setChecked(loadChecked("Cwaniactwo2"));
+        Cwaniactwo3.setChecked(loadChecked("Cwaniactwo3"));
+        Handel1.setChecked(loadChecked("Handel1"));
+        Handel2.setChecked(loadChecked("Handel2"));
+        Handel3.setChecked(loadChecked("Handel3"));
+        Etykieta1.setChecked(loadChecked("Etykieta1"));
+        Etykieta2.setChecked(loadChecked("Etykieta2"));
+        Etykieta3.setChecked(loadChecked("Etykieta3"));
+        Przetrwanie1.setChecked(loadChecked("Przetrwanie1"));
+        Przetrwanie2.setChecked(loadChecked("Przetrwanie2"));
+        Przetrwanie3.setChecked(loadChecked("Przetrwanie3"));
+        Oburecznosc1.setChecked(loadChecked("Oburecznosc1"));
+        Oburecznosc2.setChecked(loadChecked("Oburecznosc2"));
+        Oburecznosc3.setChecked(loadChecked("Oburecznosc3"));
+        Percepcja1.setChecked(loadChecked("Percepcja1"));
+        Percepcja1.setChecked(loadChecked("Percepcja1"));
+        Percepcja1.setChecked(loadChecked("Percepcja1"));
+        Podstepy1.setChecked(loadChecked("Podstepy1"));
+        Podstepy2.setChecked(loadChecked("Podstepy2"));
+        Podstepy3.setChecked(loadChecked("Podstepy3"));
+        Leczenie1.setChecked(loadChecked("Leczenie1"));
+        Leczenie2.setChecked(loadChecked("Leczenie2"));
+        Leczenie3.setChecked(loadChecked("Leczenie3"));
+        Zbieractwo1.setChecked(loadChecked("Zbieractwo1"));
+        Zbieractwo2.setChecked(loadChecked("Zbieractwo2"));
+        Zbieractwo3.setChecked(loadChecked("Zbieractwo3"));
+        Magia1.setChecked(loadChecked("Magia1"));
+        Magia2.setChecked(loadChecked("Magia2"));
+        Magia3.setChecked(loadChecked("Magia3"));
+        Kowalstwo1.setChecked(loadChecked("Kowalstwo1"));
+        Kowalstwo2.setChecked(loadChecked("Kowalstwo2"));
+        Kowalstwo3.setChecked(loadChecked("Kowalstwo3"));
+        Ciesielstwo1.setChecked(loadChecked("Ciesielstwo1"));
+        Ciesielstwo2.setChecked(loadChecked("Ciesielstwo2"));
+        Ciesielstwo3.setChecked(loadChecked("Ciesielstwo3"));
+        Alchemia1.setChecked(loadChecked("Alchemia1"));
+        Alchemia2.setChecked(loadChecked("Alchemia2"));
+        Alchemia3.setChecked(loadChecked("Alchemia3"));
+        Gotowanie1.setChecked(loadChecked("Gotowanie1"));
+        Gotowanie2.setChecked(loadChecked("Gotowanie2"));
+        Gotowanie3.setChecked(loadChecked("Gotowanie3"));
+        Krawiectwo1.setChecked(loadChecked("Krawiectwo1"));
+        Krawiectwo2.setChecked(loadChecked("Krawiectwo2"));
+        Krawiectwo3.setChecked(loadChecked("Krawiectwo3"));
         try {
             FileInputStream fileIninputgracz = openFileInput("inputgracz.txt");
             InputStreamReader InputReadgracz = new InputStreamReader(fileIninputgracz);
@@ -690,59 +1022,6 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
             InputReadWeapon1Range.close();
             Weapon1Range.setText(Weapon1Range1);
 
-
-            FileInputStream fileIninputWeapon1Durability2 = openFileInput("inputWeapon1Durability2.txt");
-            InputStreamReader InputReadWeapon1Durability2 = new InputStreamReader(fileIninputWeapon1Durability2);
-
-            String Weapon1Durability21 = "";
-
-            while ((charRead = InputReadWeapon1Durability2.read(inputBuffer)) > 0) {
-                // char to string conversion
-                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                Weapon1Durability21 += readstring;
-            }
-            InputReadWeapon1Durability2.close();
-            Weapon1Durability2.setText(Weapon1Durability21);
-
-            FileInputStream fileIninputWeapon1Durability3 = openFileInput("inputWeapon1Durability3.txt");
-            InputStreamReader InputReadWeapon1Durability3 = new InputStreamReader(fileIninputWeapon1Durability3);
-
-            String Weapon1Durability31 = "";
-
-            while ((charRead = InputReadWeapon1Durability3.read(inputBuffer)) > 0) {
-                // char to string conversion
-                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                Weapon1Durability31 += readstring;
-            }
-            InputReadWeapon1Durability3.close();
-            Weapon1Durability3.setText(Weapon1Durability31);
-
-            FileInputStream fileIninputWeapon1Durability4 = openFileInput("inputWeapon1Durability4.txt");
-            InputStreamReader InputReadWeapon1Durability4 = new InputStreamReader(fileIninputWeapon1Durability4);
-
-            String Weapon1Durability41 = "";
-
-            while ((charRead = InputReadWeapon1Durability4.read(inputBuffer)) > 0) {
-                // char to string conversion
-                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                Weapon1Durability41 += readstring;
-            }
-            InputReadWeapon1Durability4.close();
-            Weapon1Durability4.setText(Weapon1Durability41);
-
-            FileInputStream fileIninputWeapon1Durability5 = openFileInput("inputWeapon1Durability5.txt");
-            InputStreamReader InputReadWeapon1Durability5 = new InputStreamReader(fileIninputWeapon1Durability5);
-
-            String Weapon1Durability51 = "";
-
-            while ((charRead = InputReadWeapon1Durability5.read(inputBuffer)) > 0) {
-                // char to string conversion
-                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                Weapon1Durability51 += readstring;
-            }
-            InputReadWeapon1Durability5.close();
-            Weapon1Durability5.setText(Weapon1Durability51);
-
             FileInputStream fileIninputWeapon2 = openFileInput("inputWeapon2.txt");
             InputStreamReader InputReadWeapon2 = new InputStreamReader(fileIninputWeapon2);
 
@@ -807,71 +1086,6 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
             }
             InputReadWeapon2Range.close();
             Weapon2Range.setText(Weapon2Range1);
-
-            FileInputStream fileIninputWeapon2Durability1 = openFileInput("inputWeapon2Durability1.txt");
-            InputStreamReader InputReadWeapon2Durability1 = new InputStreamReader(fileIninputWeapon2Durability1);
-
-            String Weapon2Durability11 = "";
-
-            while ((charRead = InputReadWeapon2Durability1.read(inputBuffer)) > 0) {
-                // char to string conversion
-                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                Weapon2Durability11 += readstring;
-            }
-            InputReadWeapon2Durability1.close();
-            Weapon2Durability1.setText(Weapon2Durability11);
-
-            FileInputStream fileIninputWeapon2Durability2 = openFileInput("inputWeapon2Durability2.txt");
-            InputStreamReader InputReadWeapon2Durability2 = new InputStreamReader(fileIninputWeapon2Durability2);
-
-            String Weapon2Durability21 = "";
-
-            while ((charRead = InputReadWeapon2Durability2.read(inputBuffer)) > 0) {
-                // char to string conversion
-                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                Weapon2Durability21 += readstring;
-            }
-            InputReadWeapon2Durability2.close();
-            Weapon2Durability2.setText(Weapon2Durability21);
-
-            FileInputStream fileIninputWeapon2Durability3 = openFileInput("inputWeapon2Durability3.txt");
-            InputStreamReader InputReadWeapon2Durability3 = new InputStreamReader(fileIninputWeapon2Durability3);
-
-            String Weapon2Durability31 = "";
-
-            while ((charRead = InputReadWeapon2Durability3.read(inputBuffer)) > 0) {
-                // char to string conversion
-                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                Weapon2Durability31 += readstring;
-            }
-            InputReadWeapon2Durability3.close();
-            Weapon2Durability3.setText(Weapon2Durability31);
-
-            FileInputStream fileIninputWeapon2Durability4 = openFileInput("inputWeapon2Durability4.txt");
-            InputStreamReader InputReadWeapon2Durability4 = new InputStreamReader(fileIninputWeapon2Durability4);
-
-            String Weapon2Durability41 = "";
-
-            while ((charRead = InputReadWeapon2Durability4.read(inputBuffer)) > 0) {
-                // char to string conversion
-                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                Weapon2Durability41 += readstring;
-            }
-            InputReadWeapon2Durability4.close();
-            Weapon2Durability4.setText(Weapon2Durability41);
-
-            FileInputStream fileIninputWeapon2Durability5 = openFileInput("inputWeapon2Durability5.txt");
-            InputStreamReader InputReadWeapon2Durability5 = new InputStreamReader(fileIninputWeapon2Durability5);
-
-            String Weapon2Durability51 = "";
-
-            while ((charRead = InputReadWeapon2Durability5.read(inputBuffer)) > 0) {
-                // char to string conversion
-                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                Weapon2Durability51 += readstring;
-            }
-            InputReadWeapon2Durability5.close();
-            Weapon2Durability5.setText(Weapon2Durability51);
 
             FileInputStream fileIninputWeapon3 = openFileInput("inputWeapon3.txt");
             InputStreamReader InputReadWeapon3 = new InputStreamReader(fileIninputWeapon3);
@@ -938,70 +1152,20 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
             InputReadWeapon3Range.close();
             Weapon3Range.setText(Weapon3Range1);
 
-            FileInputStream fileIninputWeapon3Durability1 = openFileInput("inputWeapon3Durability1.txt");
-            InputStreamReader InputReadWeapon3Durability1 = new InputStreamReader(fileIninputWeapon3Durability1);
+            FileInputStream fileIninputcounterTextViewStr = openFileInput("inputcounterTextViewStr.txt");
+            InputStreamReader InputReadcounterTextViewStr = new InputStreamReader(fileIninputcounterTextViewStr);
 
-            String Weapon3Durability11 = "";
+            String counterTextViewStr1 = "";
 
-            while ((charRead = InputReadWeapon3Durability1.read(inputBuffer)) > 0) {
+            while ((charRead = InputReadcounterTextViewStr.read(inputBuffer)) > 0) {
                 // char to string conversion
                 String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                Weapon3Durability11 += readstring;
+                counterTextViewStr1 += readstring;
             }
-            InputReadWeapon3Durability1.close();
-            Weapon3Durability1.setText(Weapon3Durability11);
-
-            FileInputStream fileIninputWeapon3Durability2 = openFileInput("inputWeapon3Durability2.txt");
-            InputStreamReader InputReadWeapon3Durability2 = new InputStreamReader(fileIninputWeapon3Durability2);
-
-            String Weapon3Durability21 = "";
-
-            while ((charRead = InputReadWeapon3Durability2.read(inputBuffer)) > 0) {
-                // char to string conversion
-                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                Weapon3Durability21 += readstring;
-            }
-            InputReadWeapon3Durability2.close();
-            Weapon3Durability2.setText(Weapon3Durability21);
-
-            FileInputStream fileIninputWeapon3Durability3 = openFileInput("inputWeapon3Durability3.txt");
-            InputStreamReader InputReadWeapon3Durability3 = new InputStreamReader(fileIninputWeapon3Durability3);
-
-            String Weapon3Durability31 = "";
-
-            while ((charRead = InputReadWeapon3Durability3.read(inputBuffer)) > 0) {
-                // char to string conversion
-                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                Weapon3Durability31 += readstring;
-            }
-            InputReadWeapon3Durability3.close();
-            Weapon3Durability3.setText(Weapon3Durability31);
-
-            FileInputStream fileIninputWeapon3Durability4 = openFileInput("inputWeapon3Durability4.txt");
-            InputStreamReader InputReadWeapon3Durability4 = new InputStreamReader(fileIninputWeapon3Durability4);
-
-            String Weapon3Durability41 = "";
-
-            while ((charRead = InputReadWeapon3Durability4.read(inputBuffer)) > 0) {
-                // char to string conversion
-                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                Weapon3Durability41 += readstring;
-            }
-            InputReadWeapon3Durability4.close();
-            Weapon3Durability4.setText(Weapon3Durability41);
-
-            FileInputStream fileIninputWeapon3Durability5 = openFileInput("inputWeapon3Durability5.txt");
-            InputStreamReader InputReadWeapon3Durability5 = new InputStreamReader(fileIninputWeapon3Durability5);
-
-            String Weapon3Durability51 = "";
-
-            while ((charRead = InputReadWeapon3Durability5.read(inputBuffer)) > 0) {
-                // char to string conversion
-                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                Weapon3Durability51 += readstring;
-            }
-            InputReadWeapon3Durability5.close();
-            Weapon3Durability5.setText(Weapon3Durability51);
+            InputReadcounterTextViewStr.close();
+            counterTextViewStr.setText(counterTextViewStr1);
+            if (counterTextViewStr1 == "1") {
+                counterValueStr++;}
 
         }
         catch (Exception e) {
@@ -1012,7 +1176,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
     }
 
 //Nabijanie countera Atrybutu - Strengh
-    public void PlusButtonStrClicked(View view) {
+    public void SilaClicked(View view) {
         if(counterValueStr==5) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
@@ -1024,7 +1188,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    public void MinusButtonStrClicked(View view) {
+    public void SilaCounterClicked(View view) {
         if(counterValueStr==0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
@@ -1037,7 +1201,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
     }
 
     //Nabijanie countera Atrybutu - Endurance
-    public void PlusButtonEndClicked(View view) {
+    public void BudowaClicked(View view) {
         if(counterValueEnd==5) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
@@ -1049,7 +1213,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    public void MinusButtonEndClicked(View view) {
+    public void BudowaCounterClicked(View view) {
         if(counterValueEnd==0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
@@ -1062,7 +1226,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
     }
 
 //Nabijanie countera Atrybutu - Kondition
-    public void PlusButtonKonClicked(View view) {
+    public void KondycjaClicked(View view) {
         if(counterValueKon==5) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
@@ -1074,7 +1238,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    public void MinusButtonKonClicked(View view) {
+    public void KondycjaCounterClicked(View view) {
         if(counterValueKon==0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
@@ -1087,7 +1251,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
     }
 
 //Nabijanie countera Atrybutu - Agility
-    public void PlusButtonAgiClicked(View view) {
+    public void ZrecznoscClicked(View view) {
         if(counterValueAgi==5) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
@@ -1099,7 +1263,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    public void MinusButtonAgiClicked(View view) {
+    public void ZrecznoscCounterClicked(View view) {
         if(counterValueAgi==0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
@@ -1112,7 +1276,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
     }
 
 //Nabijanie countera Atrybutu - Intelligence
-    public void PlusButtonIntClicked(View view) {
+    public void IntelektClicked(View view) {
         if(counterValueInt==5) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
@@ -1124,7 +1288,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    public void MinusButtonIntClicked(View view) {
+    public void IntelektCounterClicked(View view) {
         if(counterValueInt==0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
@@ -1137,7 +1301,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
     }
 
 //Nabijanie countera Atrybutu - Will
-    public void PlusButtonWilClicked(View view) {
+    public void WolaClicked(View view) {
         if(counterValueWil==5) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
@@ -1149,7 +1313,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    public void MinusButtonWilClicked(View view) {
+    public void WolaCounterClicked(View view) {
         if(counterValueWil==0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
@@ -1162,7 +1326,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
     }
 
 //Nabijanie countera Atrybutu - Charysma
-    public void PlusButtonChaClicked(View view) {
+    public void CharyzmaClicked(View view) {
         if(counterValueCha==5) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
@@ -1174,7 +1338,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    public void MinusButtonChaClicked(View view) {
+    public void CharyzmaCounterClicked(View view) {
         if(counterValueCha==0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
             builder.setTitle(R.string.przekroczonoZakres).setPositiveButton("OK", null);
@@ -1187,8 +1351,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
     }
 
 //Nabijanie value Experience
-    public void buttonExperienceAddClicked(View view) {
-        }
+    public void reverse(View view) {startActivity(new Intent(this,Karta1_2.class));}
 
 
     @Override
