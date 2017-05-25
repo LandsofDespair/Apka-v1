@@ -4,22 +4,35 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.provider.MediaStore;
+import android.renderscript.Sampler;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,24 +45,26 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.StreamCorruptedException;
 
+import static com.example.daniel.scrolltest3.R.attr.logo;
+
 public class Karta1 extends AppCompatActivity implements View.OnClickListener {
 
-//Deklaracja counterów Atrybutów
-    private int counterValueStr = 0;
+    //Deklaracja counterów Atrybutów
+    private int counterValueStr=0;
     private TextView counterTextViewStr;
-    private int counterValueEnd = 0;
+    private int counterValueEnd=0;
     private TextView counterTextViewEnd;
-    private int counterValueKon = 0;
+    private int counterValueKon=0;
     private TextView counterTextViewKon;
-    private int counterValueAgi = 0;
+    private int counterValueAgi=0;
     private TextView counterTextViewAgi;
-    private int counterValueInt = 0;
+    private int counterValueInt=0;
     private TextView counterTextViewInt;
-    private int counterValueWil = 0;
+    private int counterValueWil=0;
     private TextView counterTextViewWil;
-    private int counterValueCha = 0;
+    private int counterValueCha=0;
     private TextView counterTextViewCha;
-    private int counterValueAll = 0;
+    private int counterValueAll;
     private TextView counterTextViewAll;
     private EditText Gracz;
     private EditText Kampania;
@@ -99,6 +114,54 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
     private CheckBox Weapon3Durability3;
     private CheckBox Weapon3Durability4;
     private CheckBox Weapon3Durability5;
+    private EditText Armor1;
+    private EditText Armor1Type;
+    private EditText Armor1PP;
+    private CheckBox Armor1Durability1;
+    private CheckBox Armor1Durability2;
+    private CheckBox Armor1Durability3;
+    private CheckBox Armor1Durability4;
+    private CheckBox Armor1Durability5;
+    private EditText Armor2;
+    private EditText Armor2Type;
+    private EditText Armor2PP;
+    private CheckBox Armor2Durability1;
+    private CheckBox Armor2Durability2;
+    private CheckBox Armor2Durability3;
+    private CheckBox Armor2Durability4;
+    private CheckBox Armor2Durability5;
+    private EditText Armor3;
+    private EditText Armor3Type;
+    private EditText Armor3PP;
+    private CheckBox Armor3Durability1;
+    private CheckBox Armor3Durability2;
+    private CheckBox Armor3Durability3;
+    private CheckBox Armor3Durability4;
+    private CheckBox Armor3Durability5;
+    private EditText Armor4;
+    private EditText Armor4Type;
+    private EditText Armor4PP;
+    private CheckBox Armor4Durability1;
+    private CheckBox Armor4Durability2;
+    private CheckBox Armor4Durability3;
+    private CheckBox Armor4Durability4;
+    private CheckBox Armor4Durability5;
+    private EditText Armor5;
+    private EditText Armor5Type;
+    private EditText Armor5PP;
+    private CheckBox Armor5Durability1;
+    private CheckBox Armor5Durability2;
+    private CheckBox Armor5Durability3;
+    private CheckBox Armor5Durability4;
+    private CheckBox Armor5Durability5;
+    private EditText Armor6;
+    private EditText Armor6Type;
+    private EditText Armor6PP;
+    private CheckBox Armor6Durability1;
+    private CheckBox Armor6Durability2;
+    private CheckBox Armor6Durability3;
+    private CheckBox Armor6Durability4;
+    private CheckBox Armor6Durability5;
     private CheckBox LesserWoundChekbox1;
     private CheckBox LesserWoundChekbox2;
     private CheckBox LesserWoundChekbox3;
@@ -183,17 +246,19 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
     private CheckBox Krawiectwo1;
     private CheckBox Krawiectwo2;
     private CheckBox Krawiectwo3;
+    private ImageView ImageUploaded;
+    Button savebutton;
     static final int READ_BLOCK_SIZE = 100;
     private TextView Weapon1DurabilityCheck;
 
 //Deklaracja value Experience
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         super.onBackPressed();
         this.finish();
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -201,6 +266,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_karta1);
+        savebutton = (Button) findViewById(R.id.savebutton);
         Gracz = (EditText) findViewById(R.id.Gracz);
         Kampania = (EditText) findViewById(R.id.Kampania);
         Mistrz_Gry = (EditText) findViewById(R.id.MistrzGry);
@@ -249,6 +315,54 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         Weapon3Durability3 = (CheckBox) findViewById(R.id.Weapon3Durability3);
         Weapon3Durability4 = (CheckBox) findViewById(R.id.Weapon3Durability4);
         Weapon3Durability5 = (CheckBox) findViewById(R.id.Weapon3Durability5);
+        Armor1 = (EditText) findViewById((R.id.Armor1));
+        Armor1Type = (EditText) findViewById((R.id.Armor1Type));
+        Armor1PP = (EditText) findViewById((R.id.Armor1PP));
+        Armor2 = (EditText) findViewById((R.id.Armor2));
+        Armor2Type = (EditText) findViewById((R.id.Armor2Type));
+        Armor2PP = (EditText) findViewById((R.id.Armor2PP));
+        Armor3 = (EditText) findViewById((R.id.Armor3));
+        Armor3Type = (EditText) findViewById((R.id.Armor3Type));
+        Armor3PP = (EditText) findViewById((R.id.Armor3PP));
+        Armor4 = (EditText) findViewById((R.id.Armor4));
+        Armor4Type = (EditText) findViewById((R.id.Armor4Type));
+        Armor4PP = (EditText) findViewById((R.id.Armor4PP));
+        Armor5 = (EditText) findViewById((R.id.Armor5));
+        Armor5Type = (EditText) findViewById((R.id.Armor5Type));
+        Armor5PP = (EditText) findViewById((R.id.Armor5PP));
+        Armor6 = (EditText) findViewById((R.id.Armor6));
+        Armor6Type = (EditText) findViewById((R.id.Armor6Type));
+        Armor6PP = (EditText) findViewById((R.id.Armor6PP));
+        Armor1Durability1 = (CheckBox) findViewById(R.id.Armor1Durability1);
+        Armor1Durability2 = (CheckBox) findViewById(R.id.Armor1Durability2);
+        Armor1Durability3 = (CheckBox) findViewById(R.id.Armor1Durability3);
+        Armor1Durability4 = (CheckBox) findViewById(R.id.Armor1Durability4);
+        Armor1Durability5 = (CheckBox) findViewById(R.id.Armor1Durability5);
+        Armor2Durability1 = (CheckBox) findViewById(R.id.Armor2Durability1);
+        Armor2Durability2 = (CheckBox) findViewById(R.id.Armor2Durability2);
+        Armor2Durability3 = (CheckBox) findViewById(R.id.Armor2Durability3);
+        Armor2Durability4 = (CheckBox) findViewById(R.id.Armor2Durability4);
+        Armor2Durability5 = (CheckBox) findViewById(R.id.Armor2Durability5);
+        Armor3Durability1 = (CheckBox) findViewById(R.id.Armor3Durability1);
+        Armor3Durability2 = (CheckBox) findViewById(R.id.Armor3Durability2);
+        Armor3Durability3 = (CheckBox) findViewById(R.id.Armor3Durability3);
+        Armor3Durability4 = (CheckBox) findViewById(R.id.Armor3Durability4);
+        Armor3Durability5 = (CheckBox) findViewById(R.id.Armor3Durability5);
+        Armor4Durability1 = (CheckBox) findViewById(R.id.Armor4Durability1);
+        Armor4Durability2 = (CheckBox) findViewById(R.id.Armor4Durability2);
+        Armor4Durability3 = (CheckBox) findViewById(R.id.Armor4Durability3);
+        Armor4Durability4 = (CheckBox) findViewById(R.id.Armor4Durability4);
+        Armor4Durability5 = (CheckBox) findViewById(R.id.Armor4Durability5);
+        Armor5Durability1 = (CheckBox) findViewById(R.id.Armor5Durability1);
+        Armor5Durability2 = (CheckBox) findViewById(R.id.Armor5Durability2);
+        Armor5Durability3 = (CheckBox) findViewById(R.id.Armor5Durability3);
+        Armor5Durability4 = (CheckBox) findViewById(R.id.Armor5Durability4);
+        Armor5Durability5 = (CheckBox) findViewById(R.id.Armor5Durability5);
+        Armor6Durability1 = (CheckBox) findViewById(R.id.Armor6Durability1);
+        Armor6Durability2 = (CheckBox) findViewById(R.id.Armor6Durability2);
+        Armor6Durability3 = (CheckBox) findViewById(R.id.Armor6Durability3);
+        Armor6Durability4 = (CheckBox) findViewById(R.id.Armor6Durability4);
+        Armor6Durability5 = (CheckBox) findViewById(R.id.Armor6Durability5);
         LesserWoundChekbox1 = (CheckBox) findViewById(R.id.LesserWoundChekbox1);
         LesserWoundChekbox2 = (CheckBox) findViewById(R.id.LesserWoundChekbox2);
         LesserWoundChekbox3 = (CheckBox) findViewById(R.id.LesserWoundChekbox3);
@@ -333,29 +447,133 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         Krawiectwo1 = (CheckBox) findViewById(R.id.Krawiectwo1);
         Krawiectwo2 = (CheckBox) findViewById(R.id.Krawiectwo2);
         Krawiectwo3 = (CheckBox) findViewById(R.id.Krawiectwo3);
+        ImageUploaded = (ImageView) findViewById(R.id.ImageUploaded);
         try {
             load();
+            atrybutyrefresh();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
 //Przypisanie findViewById dla Atrybutów
-        counterTextViewStr = (TextView)findViewById(R.id.counterTextViewStr);
-        counterTextViewEnd = (TextView)findViewById(R.id.counterTextViewEnd);
-        counterTextViewKon = (TextView)findViewById(R.id.counterTextViewKon);
-        counterTextViewAgi = (TextView)findViewById(R.id.counterTextViewAgi);
-        counterTextViewInt = (TextView)findViewById(R.id.counterTextViewInt);
-        counterTextViewWil = (TextView)findViewById(R.id.counterTextViewWil);
-        counterTextViewCha = (TextView)findViewById(R.id.counterTextViewCha);
-        counterTextViewAll = (TextView)findViewById(R.id.counterTextViewAll);
+        counterTextViewStr = (TextView) findViewById(R.id.counterTextViewStr);
+        counterTextViewEnd = (TextView) findViewById(R.id.counterTextViewEnd);
+        counterTextViewKon = (TextView) findViewById(R.id.counterTextViewKon);
+        counterTextViewAgi = (TextView) findViewById(R.id.counterTextViewAgi);
+        counterTextViewInt = (TextView) findViewById(R.id.counterTextViewInt);
+        counterTextViewWil = (TextView) findViewById(R.id.counterTextViewWil);
+        counterTextViewCha = (TextView) findViewById(R.id.counterTextViewCha);
+        counterTextViewAll = (TextView) findViewById(R.id.counterTextViewAll);
 
 //Przypisanie findViewById dla Experience
 
+        atrybutyrefresh();
 
+    }
+
+    public static class ImageSaver {
+
+        private String directoryName = "images";
+        private String fileName = "image.png";
+        private Context context;
+        private boolean external;
+
+        public ImageSaver(Context context) {
+            this.context = context;
+        }
+
+        public ImageSaver setFileName(String fileName) {
+            this.fileName = fileName;
+            return this;
+        }
+
+        public ImageSaver setExternal(boolean external) {
+            this.external = external;
+            return this;
+        }
+
+        public ImageSaver setDirectoryName(String directoryName) {
+            this.directoryName = directoryName;
+            return this;
+        }
+
+        public void saveBitmap(Bitmap bitmapImage) {
+            FileOutputStream fileOutputStream = null;
+            try {
+                fileOutputStream = new FileOutputStream(createFile());
+                bitmapImage.compress(Bitmap.CompressFormat.JPEG, 90, fileOutputStream);
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (fileOutputStream != null) {
+                        fileOutputStream.close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+        @NonNull
+        private File createFile() {
+            File directory;
+            if (external) {
+                directory = getAlbumStorageDir(directoryName);
+            } else {
+                directory = context.getDir(directoryName, Context.MODE_PRIVATE);
+            }
+
+            return new File(directory, fileName);
+        }
+
+        private File getAlbumStorageDir(String albumName) {
+            File file = new File(Environment.getExternalStoragePublicDirectory(
+                    Environment.DIRECTORY_PICTURES), albumName);
+            if (!file.mkdirs()) {
+                Log.e("ImageSaver", "Directory not created");
+            }
+            return file;
+        }
+
+
+        public static boolean isExternalStorageWritable() {
+            String state = Environment.getExternalStorageState();
+            return Environment.MEDIA_MOUNTED.equals(state);
+        }
+
+        public static boolean isExternalStorageReadable() {
+            String state = Environment.getExternalStorageState();
+            return Environment.MEDIA_MOUNTED.equals(state) ||
+                    Environment.MEDIA_MOUNTED_READ_ONLY.equals(state);
+        }
+
+
+        public Bitmap loadBitmap() {
+            FileInputStream inputStream = null;
+            try {
+                inputStream = new FileInputStream(createFile());
+                return BitmapFactory.decodeStream(inputStream);
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (inputStream != null) {
+                        inputStream.close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return null;
+        }
     }
 
     public void save(View view) {
         try {
+
+
             FileOutputStream fileoutinputgracz = openFileOutput("inputgracz.txt", MODE_PRIVATE);
             OutputStreamWriter outputWriterinputgracz = new OutputStreamWriter(fileoutinputgracz);
             outputWriterinputgracz.write(Gracz.getText().toString());
@@ -436,41 +654,6 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
             outputWriterinputkolorwlosow.write(Kolor_Wlosow.getText().toString());
             outputWriterinputkolorwlosow.close();
 
-            FileOutputStream fileoutinputcounterTextViewStr = openFileOutput("inputcounterTextViewStr.txt", MODE_PRIVATE);
-            OutputStreamWriter outputWriterinputcounterTextViewStr = new OutputStreamWriter(fileoutinputcounterTextViewStr);
-            outputWriterinputcounterTextViewStr.write(counterTextViewStr.getText().toString());
-            outputWriterinputcounterTextViewStr.close();
-
-            FileOutputStream fileoutinputcounterTextViewEnd = openFileOutput("inputcounterTextViewEnd.txt", MODE_PRIVATE);
-            OutputStreamWriter outputWriterinputcounterTextViewEnd = new OutputStreamWriter(fileoutinputcounterTextViewEnd);
-            outputWriterinputcounterTextViewEnd.write(counterTextViewEnd.getText().toString());
-            outputWriterinputcounterTextViewEnd.close();
-
-            FileOutputStream fileoutinputcounterTextViewKon = openFileOutput("inputcounterTextViewKon.txt", MODE_PRIVATE);
-            OutputStreamWriter outputWriterinputcounterTextViewKon = new OutputStreamWriter(fileoutinputcounterTextViewKon);
-            outputWriterinputcounterTextViewKon.write(counterTextViewKon.getText().toString());
-            outputWriterinputcounterTextViewKon.close();
-
-            FileOutputStream fileoutinputcounterTextViewAgi = openFileOutput("inputcounterTextViewAgi.txt", MODE_PRIVATE);
-            OutputStreamWriter outputWriterinputcounterTextViewAgi = new OutputStreamWriter(fileoutinputcounterTextViewAgi);
-            outputWriterinputcounterTextViewAgi.write(counterTextViewAgi.getText().toString());
-            outputWriterinputcounterTextViewAgi.close();
-
-            FileOutputStream fileoutinputcounterTextViewInt = openFileOutput("inputcounterTextViewInt.txt", MODE_PRIVATE);
-            OutputStreamWriter outputWriterinputcounterTextViewInt = new OutputStreamWriter(fileoutinputcounterTextViewInt);
-            outputWriterinputcounterTextViewInt.write(counterTextViewInt.getText().toString());
-            outputWriterinputcounterTextViewInt.close();
-
-            FileOutputStream fileoutinputcounterTextViewWil = openFileOutput("inputcounterTextViewWil.txt", MODE_PRIVATE);
-            OutputStreamWriter outputWriterinputcounterTextViewWil = new OutputStreamWriter(fileoutinputcounterTextViewWil);
-            outputWriterinputcounterTextViewWil.write(counterTextViewWil.getText().toString());
-            outputWriterinputcounterTextViewWil.close();
-
-            FileOutputStream fileoutinputcounterTextViewCha = openFileOutput("inputcounterTextViewCha.txt", MODE_PRIVATE);
-            OutputStreamWriter outputWriterinputcounterTextViewCha = new OutputStreamWriter(fileoutinputcounterTextViewCha);
-            outputWriterinputcounterTextViewCha.write(counterTextViewCha.getText().toString());
-            outputWriterinputcounterTextViewCha.close();
-
             FileOutputStream fileoutinputvalueExperience = openFileOutput("inputvalueExperience.txt", MODE_PRIVATE);
             OutputStreamWriter outputWriterinputvalueExperience = new OutputStreamWriter(fileoutinputvalueExperience);
             outputWriterinputvalueExperience.write(valueExperience1.getText().toString());
@@ -506,6 +689,157 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
             outputWriterinputWeapon1Range.write(Weapon1Range.getText().toString());
             outputWriterinputWeapon1Range.close();
 
+            FileOutputStream fileoutinputWeapon2 = openFileOutput("inputWeapon2.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputWeapon2 = new OutputStreamWriter(fileoutinputWeapon2);
+            outputWriterinputWeapon2.write(Weapon2.getText().toString());
+            outputWriterinputWeapon2.close();
+
+            FileOutputStream fileoutinputWeapon2Damage = openFileOutput("inputWeapon2Damage.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputWeapon2Damage = new OutputStreamWriter(fileoutinputWeapon2Damage);
+            outputWriterinputWeapon2Damage.write(Weapon2Damage.getText().toString());
+            outputWriterinputWeapon2Damage.close();
+
+            FileOutputStream fileoutinputWeapon2Weight = openFileOutput("inputWeapon2Weight.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputWeapon2Weight = new OutputStreamWriter(fileoutinputWeapon2Weight);
+            outputWriterinputWeapon2Weight.write(Weapon2Weight.getText().toString());
+            outputWriterinputWeapon2Weight.close();
+
+            FileOutputStream fileoutinputWeapon2Ammunition = openFileOutput("inputWeapon2Ammunition.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputWeapon2Ammunition = new OutputStreamWriter(fileoutinputWeapon2Ammunition);
+            outputWriterinputWeapon2Ammunition.write(Weapon2Ammunition.getText().toString());
+            outputWriterinputWeapon2Ammunition.close();
+
+            FileOutputStream fileoutinputWeapon2Range = openFileOutput("inputWeapon2Range.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputWeapon2Range = new OutputStreamWriter(fileoutinputWeapon2Range);
+            outputWriterinputWeapon2Range.write(Weapon2Range.getText().toString());
+            outputWriterinputWeapon2Range.close();
+
+            FileOutputStream fileoutinputWeapon3 = openFileOutput("inputWeapon3.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputWeapon3 = new OutputStreamWriter(fileoutinputWeapon3);
+            outputWriterinputWeapon3.write(Weapon3.getText().toString());
+            outputWriterinputWeapon3.close();
+
+            FileOutputStream fileoutinputWeapon3Damage = openFileOutput("inputWeapon3Damage.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputWeapon3Damage = new OutputStreamWriter(fileoutinputWeapon3Damage);
+            outputWriterinputWeapon3Damage.write(Weapon3Damage.getText().toString());
+            outputWriterinputWeapon3Damage.close();
+
+            FileOutputStream fileoutinputWeapon3Weight = openFileOutput("inputWeapon3Weight.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputWeapon3Weight = new OutputStreamWriter(fileoutinputWeapon3Weight);
+            outputWriterinputWeapon3Weight.write(Weapon3Weight.getText().toString());
+            outputWriterinputWeapon3Weight.close();
+
+            FileOutputStream fileoutinputWeapon3Ammunition = openFileOutput("inputWeapon3Ammunition.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputWeapon3Ammunition = new OutputStreamWriter(fileoutinputWeapon3Ammunition);
+            outputWriterinputWeapon3Ammunition.write(Weapon3Ammunition.getText().toString());
+            outputWriterinputWeapon3Ammunition.close();
+
+            FileOutputStream fileoutinputWeapon3Range = openFileOutput("inputWeapon3Range.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputWeapon3Range = new OutputStreamWriter(fileoutinputWeapon3Range);
+            outputWriterinputWeapon3Range.write(Weapon3Range.getText().toString());
+            outputWriterinputWeapon3Range.close();
+
+            FileOutputStream fileoutinputArmor1 = openFileOutput("inputArmor1.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor1 = new OutputStreamWriter(fileoutinputArmor1);
+            outputWriterinputArmor1.write(Armor1.getText().toString());
+            outputWriterinputArmor1.close();
+
+            FileOutputStream fileoutinputArmor1Type = openFileOutput("inputArmor1Type.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor1Type = new OutputStreamWriter(fileoutinputArmor1Type);
+            outputWriterinputArmor1Type.write(Armor1Type.getText().toString());
+            outputWriterinputArmor1Type.close();
+
+            FileOutputStream fileoutinputArmor1PP = openFileOutput("inputArmor1PP.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor1PP = new OutputStreamWriter(fileoutinputArmor1PP);
+            outputWriterinputArmor1PP.write(Armor1PP.getText().toString());
+            outputWriterinputArmor1PP.close();
+
+            FileOutputStream fileoutinputArmor2 = openFileOutput("inputArmor2.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor2 = new OutputStreamWriter(fileoutinputArmor2);
+            outputWriterinputArmor2.write(Armor2.getText().toString());
+            outputWriterinputArmor2.close();
+
+            FileOutputStream fileoutinputArmor2Type = openFileOutput("inputArmor2Type.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor2Type = new OutputStreamWriter(fileoutinputArmor2Type);
+            outputWriterinputArmor2Type.write(Armor2Type.getText().toString());
+            outputWriterinputArmor2Type.close();
+
+            FileOutputStream fileoutinputArmor2PP = openFileOutput("inputArmor2PP.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor2PP = new OutputStreamWriter(fileoutinputArmor2PP);
+            outputWriterinputArmor2PP.write(Armor2PP.getText().toString());
+            outputWriterinputArmor2PP.close();
+
+            FileOutputStream fileoutinputArmor3 = openFileOutput("inputArmor3.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor3 = new OutputStreamWriter(fileoutinputArmor3);
+            outputWriterinputArmor3.write(Armor3.getText().toString());
+            outputWriterinputArmor3.close();
+
+            FileOutputStream fileoutinputArmor3Type = openFileOutput("inputArmor3Type.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor3Type = new OutputStreamWriter(fileoutinputArmor3Type);
+            outputWriterinputArmor3Type.write(Armor3Type.getText().toString());
+            outputWriterinputArmor3Type.close();
+
+            FileOutputStream fileoutinputArmor3PP = openFileOutput("inputArmor3PP.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor3PP = new OutputStreamWriter(fileoutinputArmor3PP);
+            outputWriterinputArmor3PP.write(Armor3PP.getText().toString());
+            outputWriterinputArmor3PP.close();
+
+            FileOutputStream fileoutinputArmor4 = openFileOutput("inputArmor4.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor4 = new OutputStreamWriter(fileoutinputArmor4);
+            outputWriterinputArmor4.write(Armor4.getText().toString());
+            outputWriterinputArmor4.close();
+
+            FileOutputStream fileoutinputArmor4Type = openFileOutput("inputArmor4Type.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor4Type = new OutputStreamWriter(fileoutinputArmor4Type);
+            outputWriterinputArmor4Type.write(Armor4Type.getText().toString());
+            outputWriterinputArmor4Type.close();
+
+            FileOutputStream fileoutinputArmor4PP = openFileOutput("inputArmor4PP.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor4PP = new OutputStreamWriter(fileoutinputArmor4PP);
+            outputWriterinputArmor4PP.write(Armor4PP.getText().toString());
+            outputWriterinputArmor4PP.close();
+
+            FileOutputStream fileoutinputArmor5 = openFileOutput("inputArmor5.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor5 = new OutputStreamWriter(fileoutinputArmor5);
+            outputWriterinputArmor5.write(Armor5.getText().toString());
+            outputWriterinputArmor5.close();
+
+            FileOutputStream fileoutinputArmor5Type = openFileOutput("inputArmor5Type.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor5Type = new OutputStreamWriter(fileoutinputArmor5Type);
+            outputWriterinputArmor5Type.write(Armor5Type.getText().toString());
+            outputWriterinputArmor5Type.close();
+
+            FileOutputStream fileoutinputArmor5PP = openFileOutput("inputArmor5PP.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor5PP = new OutputStreamWriter(fileoutinputArmor5PP);
+            outputWriterinputArmor5PP.write(Armor5PP.getText().toString());
+            outputWriterinputArmor5PP.close();
+
+            FileOutputStream fileoutinputArmor6 = openFileOutput("inputArmor6.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor6 = new OutputStreamWriter(fileoutinputArmor6);
+            outputWriterinputArmor6.write(Armor6.getText().toString());
+            outputWriterinputArmor6.close();
+
+            FileOutputStream fileoutinputArmor6Type = openFileOutput("inputArmor6Type.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor6Type = new OutputStreamWriter(fileoutinputArmor6Type);
+            outputWriterinputArmor6Type.write(Armor6Type.getText().toString());
+            outputWriterinputArmor6Type.close();
+
+            FileOutputStream fileoutinputArmor6PP = openFileOutput("inputArmor6PP.txt", MODE_PRIVATE);
+            OutputStreamWriter outputWriterinputArmor6PP = new OutputStreamWriter(fileoutinputArmor6PP);
+            outputWriterinputArmor6PP.write(Armor6PP.getText().toString());
+            outputWriterinputArmor6PP.close();
+
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putFloat("Siła",counterValueStr).
+            putFloat("Budowa",counterValueEnd).
+            putFloat("Kondycja",counterValueKon).
+            putFloat("Zręczność",counterValueAgi).
+            putFloat("Intelekt",counterValueInt).
+            putFloat("Siła Woli",counterValueWil).
+            putFloat("Charyzma",counterValueCha);
+            editor.commit();
+
             Toast.makeText(getBaseContext(), "Karta została zapisana!",
                     Toast.LENGTH_SHORT).show();
 
@@ -524,6 +858,37 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
             saveChecked("Weapon3Durability3", Weapon3Durability3.isChecked());
             saveChecked("Weapon3Durability4", Weapon3Durability4.isChecked());
             saveChecked("Weapon3Durability5", Weapon3Durability5.isChecked());
+            saveChecked("Weapon3Durability1", Weapon3Durability1.isChecked());
+            saveChecked("Armor1Durability1", Armor1Durability1.isChecked());
+            saveChecked("Armor1Durability2", Armor1Durability2.isChecked());
+            saveChecked("Armor1Durability3", Armor1Durability3.isChecked());
+            saveChecked("Armor1Durability4", Armor1Durability4.isChecked());
+            saveChecked("Armor1Durability5", Armor1Durability5.isChecked());
+            saveChecked("Armor2Durability1", Armor2Durability1.isChecked());
+            saveChecked("Armor2Durability2", Armor2Durability2.isChecked());
+            saveChecked("Armor2Durability3", Armor2Durability3.isChecked());
+            saveChecked("Armor2Durability4", Armor2Durability4.isChecked());
+            saveChecked("Armor2Durability5", Armor2Durability5.isChecked());
+            saveChecked("Armor3Durability1", Armor3Durability1.isChecked());
+            saveChecked("Armor3Durability2", Armor3Durability2.isChecked());
+            saveChecked("Armor3Durability3", Armor3Durability3.isChecked());
+            saveChecked("Armor3Durability4", Armor3Durability4.isChecked());
+            saveChecked("Armor3Durability5", Armor3Durability5.isChecked());
+            saveChecked("Armor4Durability1", Armor4Durability1.isChecked());
+            saveChecked("Armor4Durability2", Armor4Durability2.isChecked());
+            saveChecked("Armor4Durability3", Armor4Durability3.isChecked());
+            saveChecked("Armor4Durability4", Armor4Durability4.isChecked());
+            saveChecked("Armor4Durability5", Armor4Durability5.isChecked());
+            saveChecked("Armor5Durability1", Armor5Durability1.isChecked());
+            saveChecked("Armor5Durability2", Armor5Durability2.isChecked());
+            saveChecked("Armor5Durability3", Armor5Durability3.isChecked());
+            saveChecked("Armor5Durability4", Armor5Durability4.isChecked());
+            saveChecked("Armor5Durability5", Armor5Durability5.isChecked());
+            saveChecked("Armor6Durability1", Armor6Durability1.isChecked());
+            saveChecked("Armor6Durability2", Armor6Durability2.isChecked());
+            saveChecked("Armor6Durability3", Armor6Durability3.isChecked());
+            saveChecked("Armor6Durability4", Armor6Durability4.isChecked());
+            saveChecked("Armor6Durability5", Armor6Durability5.isChecked());
             saveChecked("LesserWoundChekbox1", LesserWoundChekbox1.isChecked());
             saveChecked("LesserWoundChekbox2", LesserWoundChekbox2.isChecked());
             saveChecked("LesserWoundChekbox3", LesserWoundChekbox3.isChecked());
@@ -638,6 +1003,36 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         Weapon3Durability3.setChecked(loadChecked("Weapon3Durability3"));
         Weapon3Durability4.setChecked(loadChecked("Weapon3Durability4"));
         Weapon3Durability5.setChecked(loadChecked("Weapon3Durability5"));
+        Armor1Durability1.setChecked(loadChecked("Armor1Durability1"));
+        Armor1Durability2.setChecked(loadChecked("Armor1Durability2"));
+        Armor1Durability3.setChecked(loadChecked("Armor1Durability3"));
+        Armor1Durability4.setChecked(loadChecked("Armor1Durability4"));
+        Armor1Durability5.setChecked(loadChecked("Armor1Durability5"));
+        Armor2Durability1.setChecked(loadChecked("Armor2Durability1"));
+        Armor2Durability2.setChecked(loadChecked("Armor2Durability2"));
+        Armor2Durability3.setChecked(loadChecked("Armor2Durability3"));
+        Armor2Durability4.setChecked(loadChecked("Armor2Durability4"));
+        Armor2Durability5.setChecked(loadChecked("Armor2Durability5"));
+        Armor3Durability1.setChecked(loadChecked("Armor3Durability1"));
+        Armor3Durability2.setChecked(loadChecked("Armor3Durability2"));
+        Armor3Durability3.setChecked(loadChecked("Armor3Durability3"));
+        Armor3Durability4.setChecked(loadChecked("Armor3Durability4"));
+        Armor3Durability5.setChecked(loadChecked("Armor3Durability5"));
+        Armor4Durability1.setChecked(loadChecked("Armor4Durability1"));
+        Armor4Durability2.setChecked(loadChecked("Armor4Durability2"));
+        Armor4Durability3.setChecked(loadChecked("Armor4Durability3"));
+        Armor4Durability4.setChecked(loadChecked("Armor4Durability4"));
+        Armor4Durability5.setChecked(loadChecked("Armor4Durability5"));
+        Armor5Durability1.setChecked(loadChecked("Armor5Durability1"));
+        Armor5Durability2.setChecked(loadChecked("Armor5Durability2"));
+        Armor5Durability3.setChecked(loadChecked("Armor5Durability3"));
+        Armor5Durability4.setChecked(loadChecked("Armor5Durability4"));
+        Armor5Durability5.setChecked(loadChecked("Armor5Durability5"));
+        Armor6Durability1.setChecked(loadChecked("Armor6Durability1"));
+        Armor6Durability2.setChecked(loadChecked("Armor6Durability2"));
+        Armor6Durability3.setChecked(loadChecked("Armor6Durability3"));
+        Armor6Durability4.setChecked(loadChecked("Armor6Durability4"));
+        Armor6Durability5.setChecked(loadChecked("Armor6Durability5"));
         LesserWoundChekbox1.setChecked(loadChecked("LesserWoundChekbox1"));
         LesserWoundChekbox2.setChecked(loadChecked("LesserWoundChekbox2"));
         LesserWoundChekbox3.setChecked(loadChecked("LesserWoundChekbox3"));
@@ -719,7 +1114,15 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         Krawiectwo1.setChecked(loadChecked("Krawiectwo1"));
         Krawiectwo2.setChecked(loadChecked("Krawiectwo2"));
         Krawiectwo3.setChecked(loadChecked("Krawiectwo3"));
+        Context context;
+        context = this;
+        Bitmap bitmap = new ImageSaver(context).
+                setFileName("myImage.png").
+                setDirectoryName("images").
+                loadBitmap();
+        ImageUploaded.setImageBitmap(bitmap);
         try {
+
             FileInputStream fileIninputgracz = openFileInput("inputgracz.txt");
             InputStreamReader InputReadgracz = new InputStreamReader(fileIninputgracz);
 
@@ -1152,21 +1555,277 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
             InputReadWeapon3Range.close();
             Weapon3Range.setText(Weapon3Range1);
 
-            FileInputStream fileIninputcounterTextViewStr = openFileInput("inputcounterTextViewStr.txt");
-            InputStreamReader InputReadcounterTextViewStr = new InputStreamReader(fileIninputcounterTextViewStr);
+            FileInputStream fileIninputArmor1 = openFileInput("inputArmor1.txt");
+            InputStreamReader InputReadArmor1 = new InputStreamReader(fileIninputArmor1);
 
-            String counterTextViewStr1 = "";
+            String Armor11 = "";
 
-            while ((charRead = InputReadcounterTextViewStr.read(inputBuffer)) > 0) {
+            while ((charRead = InputReadArmor1.read(inputBuffer)) > 0) {
                 // char to string conversion
                 String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                counterTextViewStr1 += readstring;
+                Armor11 += readstring;
             }
-            InputReadcounterTextViewStr.close();
-            counterTextViewStr.setText(counterTextViewStr1);
-            if (counterTextViewStr1 == "1") {
-                counterValueStr++;}
+            InputReadArmor1.close();
+            Armor1.setText(Armor11);
 
+            FileInputStream fileIninputArmor1Type = openFileInput("inputArmor1Type.txt");
+            InputStreamReader InputReadArmor1Type = new InputStreamReader(fileIninputArmor1Type);
+
+            String Armor1Type1 = "";
+
+            while ((charRead = InputReadArmor1Type.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor1Type1 += readstring;
+            }
+            InputReadArmor1Type.close();
+            Armor1Type.setText(Armor1Type1);
+
+            FileInputStream fileIninputArmor1PP = openFileInput("inputArmor1PP.txt");
+            InputStreamReader InputReadArmor1PP = new InputStreamReader(fileIninputArmor1PP);
+
+            String Armor1PP1 = "";
+
+            while ((charRead = InputReadArmor1PP.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor1PP1 += readstring;
+            }
+            InputReadArmor1PP.close();
+            Armor1PP.setText(Armor1PP1);
+
+            FileInputStream fileIninputArmor2 = openFileInput("inputArmor2.txt");
+            InputStreamReader InputReadArmor2 = new InputStreamReader(fileIninputArmor2);
+
+            String Armor21 = "";
+
+            while ((charRead = InputReadArmor2.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor21 += readstring;
+            }
+            InputReadArmor2.close();
+            Armor2.setText(Armor21);
+
+            FileInputStream fileIninputArmor2Type = openFileInput("inputArmor2Type.txt");
+            InputStreamReader InputReadArmor2Type = new InputStreamReader(fileIninputArmor2Type);
+
+            String Armor2Type1 = "";
+
+            while ((charRead = InputReadArmor2Type.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor2Type1 += readstring;
+            }
+            InputReadArmor2Type.close();
+            Armor2Type.setText(Armor2Type1);
+
+            FileInputStream fileIninputArmor2PP = openFileInput("inputArmor2PP.txt");
+            InputStreamReader InputReadArmor2PP = new InputStreamReader(fileIninputArmor2PP);
+
+            String Armor2PP1 = "";
+
+            while ((charRead = InputReadArmor2PP.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor2PP1 += readstring;
+            }
+            InputReadArmor2PP.close();
+            Armor2PP.setText(Armor2PP1);
+
+            FileInputStream fileIninputArmor3 = openFileInput("inputArmor3.txt");
+            InputStreamReader InputReadArmor3 = new InputStreamReader(fileIninputArmor3);
+
+            String Armor31 = "";
+
+            while ((charRead = InputReadArmor3.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor31 += readstring;
+            }
+            InputReadArmor3.close();
+            Armor3.setText(Armor31);
+
+            FileInputStream fileIninputArmor3Type = openFileInput("inputArmor3Type.txt");
+            InputStreamReader InputReadArmor3Type = new InputStreamReader(fileIninputArmor3Type);
+
+            String Armor3Type1 = "";
+
+            while ((charRead = InputReadArmor3Type.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor3Type1 += readstring;
+            }
+            InputReadArmor3Type.close();
+            Armor3Type.setText(Armor3Type1);
+
+            FileInputStream fileIninputArmor3PP = openFileInput("inputArmor3PP.txt");
+            InputStreamReader InputReadArmor3PP = new InputStreamReader(fileIninputArmor3PP);
+
+            String Armor3PP1 = "";
+
+            while ((charRead = InputReadArmor3PP.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor3PP1 += readstring;
+            }
+            InputReadArmor3PP.close();
+            Armor3PP.setText(Armor3PP1);
+
+            FileInputStream fileIninputArmor4 = openFileInput("inputArmor4.txt");
+            InputStreamReader InputReadArmor4 = new InputStreamReader(fileIninputArmor4);
+
+            String Armor41 = "";
+
+            while ((charRead = InputReadArmor4.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor41 += readstring;
+            }
+            InputReadArmor4.close();
+            Armor4.setText(Armor41);
+
+            FileInputStream fileIninputArmor4Type = openFileInput("inputArmor4Type.txt");
+            InputStreamReader InputReadArmor4Type = new InputStreamReader(fileIninputArmor4Type);
+
+            String Armor4Type1 = "";
+
+            while ((charRead = InputReadArmor4Type.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor4Type1 += readstring;
+            }
+            InputReadArmor4Type.close();
+            Armor4Type.setText(Armor4Type1);
+
+            FileInputStream fileIninputArmor4PP = openFileInput("inputArmor4PP.txt");
+            InputStreamReader InputReadArmor4PP = new InputStreamReader(fileIninputArmor4PP);
+
+            String Armor4PP1 = "";
+
+            while ((charRead = InputReadArmor4PP.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor4PP1 += readstring;
+            }
+            InputReadArmor4PP.close();
+            Armor4PP.setText(Armor4PP1);
+
+            FileInputStream fileIninputArmor5 = openFileInput("inputArmor5.txt");
+            InputStreamReader InputReadArmor5 = new InputStreamReader(fileIninputArmor5);
+
+            String Armor51 = "";
+
+            while ((charRead = InputReadArmor5.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor51 += readstring;
+            }
+            InputReadArmor5.close();
+            Armor5.setText(Armor51);
+
+            FileInputStream fileIninputArmor5Type = openFileInput("inputArmor5Type.txt");
+            InputStreamReader InputReadArmor5Type = new InputStreamReader(fileIninputArmor5Type);
+
+            String Armor5Type1 = "";
+
+            while ((charRead = InputReadArmor5Type.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor5Type1 += readstring;
+            }
+            InputReadArmor5Type.close();
+            Armor5Type.setText(Armor5Type1);
+
+            FileInputStream fileIninputArmor5PP = openFileInput("inputArmor5PP.txt");
+            InputStreamReader InputReadArmor5PP = new InputStreamReader(fileIninputArmor5PP);
+
+            String Armor5PP1 = "";
+
+            while ((charRead = InputReadArmor5PP.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor5PP1 += readstring;
+            }
+            InputReadArmor5PP.close();
+            Armor5PP.setText(Armor5PP1);
+
+            FileInputStream fileIninputArmor6 = openFileInput("inputArmor6.txt");
+            InputStreamReader InputReadArmor6 = new InputStreamReader(fileIninputArmor6);
+
+            String Armor61 = "";
+
+            while ((charRead = InputReadArmor6.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor61 += readstring;
+            }
+            InputReadArmor6.close();
+            Armor6.setText(Armor61);
+
+            FileInputStream fileIninputArmor6Type = openFileInput("inputArmor6Type.txt");
+            InputStreamReader InputReadArmor6Type = new InputStreamReader(fileIninputArmor6Type);
+
+            String Armor6Type1 = "";
+
+            while ((charRead = InputReadArmor6Type.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor6Type1 += readstring;
+            }
+            InputReadArmor6Type.close();
+            Armor6Type.setText(Armor6Type1);
+
+            FileInputStream fileIninputArmor6PP = openFileInput("inputArmor6PP.txt");
+            InputStreamReader InputReadArmor6PP = new InputStreamReader(fileIninputArmor6PP);
+
+            String Armor6PP1 = "";
+
+            while ((charRead = InputReadArmor6PP.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Armor6PP1 += readstring;
+            }
+            InputReadArmor6PP.close();
+            Armor6PP.setText(Armor6PP1);
+
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+            float sila = preferences.getFloat("Siła", 0);
+            float budowa = preferences.getFloat("Budowa", 0);
+            float kondycja = preferences.getFloat("Kondycja", 0);
+            float zrecznosc = preferences.getFloat("Zręcznośc", 0);
+            float intelekt = preferences.getFloat("Intelekt", 0);
+            float wola = preferences.getFloat("Siła Woli", 0);
+            float charyzma = preferences.getFloat("Charyzma", 0);
+            int iS = Math.round(sila);
+            counterValueStr = iS;
+            counterTextViewStr.setText(String.valueOf(iS));
+            counterTextViewStr.invalidate();
+            int iB = Math.round(budowa);
+            counterValueEnd = iB;
+            counterTextViewEnd.setText(String.valueOf(iB));
+            counterTextViewEnd.invalidate();
+            int iK = Math.round(kondycja);
+            counterValueKon = iK;
+            counterTextViewKon.setText(String.valueOf(iK));
+            counterTextViewKon.invalidate();
+            int iA = Math.round(zrecznosc);
+            counterValueAgi = iA;
+            counterTextViewAgi.setText(String.valueOf(iA));
+            counterTextViewAgi.invalidate();
+            int iI = Math.round(intelekt);
+            counterValueInt = iI;
+            counterTextViewInt.setText(String.valueOf(iI));
+            counterTextViewInt.invalidate();
+            int iW = Math.round(wola);
+            counterValueWil = iW;
+            counterTextViewWil.setText(String.valueOf(iW));
+            counterTextViewWil.invalidate();
+            int iC = Math.round(charyzma);
+            counterValueCha = iC;
+            counterTextViewCha.setText(String.valueOf(iC));
+            counterTextViewCha.invalidate();
+            atrybutyrefresh();
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -1175,7 +1834,49 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
 
     }
 
-//Nabijanie countera Atrybutu - Strengh
+    @Override
+    protected void onResume() {
+        super.onResume();
+        atrybutyrefresh();
+    }
+
+    private static int RESULT_LOAD_IMAGE = 1;
+
+    public void GalleryOpen (View arg0){
+        Intent i = new Intent(
+                Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
+        startActivityForResult(i, RESULT_LOAD_IMAGE);
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
+            Uri selectedImage = data.getData();
+            String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+            Cursor cursor = getContentResolver().query(selectedImage,
+                    filePathColumn, null, null, null);
+            cursor.moveToFirst();
+
+            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+            String picturePath = cursor.getString(columnIndex);
+            cursor.close();
+
+            ImageView ImageUploaded = (ImageView) findViewById(R.id.ImageUploaded);
+            ImageUploaded.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+            Bitmap bitmap = BitmapFactory.decodeFile(picturePath);
+            Context context = this;
+            new ImageSaver(context).
+                    setFileName("myImage.png").
+                    setDirectoryName("images").
+                    saveBitmap(bitmap);
+        }
+    }
+
+        //Nabijanie countera Atrybutu - Strengh
     public void SilaClicked(View view) {
         if(counterValueStr==5) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Karta1.this);
@@ -1184,7 +1885,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
         else {
             counterValueStr++;
-            counterTextViewStr.setText(String.valueOf(counterValueStr));
+            atrybutyrefresh();
         }
     }
 
@@ -1196,7 +1897,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
         else {
             counterValueStr--;
-            counterTextViewStr.setText(String.valueOf(counterValueStr));
+            atrybutyrefresh();
         }
     }
 
@@ -1209,7 +1910,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
         else {
             counterValueEnd++;
-            counterTextViewEnd.setText(String.valueOf(counterValueEnd));
+            atrybutyrefresh();
         }
     }
 
@@ -1221,7 +1922,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
         else {
             counterValueEnd--;
-            counterTextViewEnd.setText(String.valueOf(counterValueEnd));
+            atrybutyrefresh();
         }
     }
 
@@ -1234,7 +1935,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
         else {
             counterValueKon++;
-            counterTextViewKon.setText(String.valueOf(counterValueKon));
+            atrybutyrefresh();
         }
     }
 
@@ -1246,7 +1947,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
         else {
             counterValueKon--;
-            counterTextViewKon.setText(String.valueOf(counterValueKon));
+            atrybutyrefresh();
         }
     }
 
@@ -1259,7 +1960,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
         else {
             counterValueAgi++;
-            counterTextViewAgi.setText(String.valueOf(counterValueAgi));
+            atrybutyrefresh();
         }
     }
 
@@ -1271,7 +1972,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
         else {
             counterValueAgi--;
-            counterTextViewAgi.setText(String.valueOf(counterValueAgi));
+            atrybutyrefresh();
         }
     }
 
@@ -1284,7 +1985,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
         else {
             counterValueInt++;
-            counterTextViewInt.setText(String.valueOf(counterValueInt));
+            atrybutyrefresh();
         }
     }
 
@@ -1296,7 +1997,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
         else {
             counterValueInt--;
-            counterTextViewInt.setText(String.valueOf(counterValueInt));
+            atrybutyrefresh();
         }
     }
 
@@ -1309,7 +2010,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
         else {
             counterValueWil++;
-            counterTextViewWil.setText(String.valueOf(counterValueWil));
+            atrybutyrefresh();
         }
     }
 
@@ -1321,7 +2022,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
         else {
             counterValueWil--;
-            counterTextViewWil.setText(String.valueOf(counterValueWil));
+            atrybutyrefresh();
         }
     }
 
@@ -1334,7 +2035,7 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
         else {
             counterValueCha++;
-            counterTextViewCha.setText(String.valueOf(counterValueCha));
+            atrybutyrefresh();
         }
     }
 
@@ -1346,8 +2047,26 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         }
         else {
             counterValueCha--;
-            counterTextViewCha.setText(String.valueOf(counterValueCha));
+            atrybutyrefresh();
         }
+    }
+
+    private void atrybutyrefresh() {
+        counterTextViewStr = (TextView) findViewById(R.id.counterTextViewStr);
+        counterTextViewEnd = (TextView) findViewById(R.id.counterTextViewEnd);
+        counterTextViewKon = (TextView) findViewById(R.id.counterTextViewKon);
+        counterTextViewAgi = (TextView) findViewById(R.id.counterTextViewAgi);
+        counterTextViewInt = (TextView) findViewById(R.id.counterTextViewInt);
+        counterTextViewWil = (TextView) findViewById(R.id.counterTextViewWil);
+        counterTextViewCha = (TextView) findViewById(R.id.counterTextViewCha);
+        counterTextViewAll = (TextView) findViewById(R.id.counterTextViewAll);
+        counterTextViewStr.setText(String.valueOf(counterValueStr));
+        counterTextViewEnd.setText(String.valueOf(counterValueEnd));
+        counterTextViewKon.setText(String.valueOf(counterValueKon));
+        counterTextViewAgi.setText(String.valueOf(counterValueAgi));
+        counterTextViewInt.setText(String.valueOf(counterValueInt));
+        counterTextViewWil.setText(String.valueOf(counterValueWil));
+        counterTextViewCha.setText(String.valueOf(counterValueCha));
     }
 
 //Nabijanie value Experience
@@ -1357,5 +2076,10 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
+    }
+
+    public void ImageDelete(View v){
+        int id = getResources().getIdentifier("com.example.daniel.scrolltest3:drawable/" + logo, null, null);
+        ImageUploaded.setImageResource(id);
     }
 }

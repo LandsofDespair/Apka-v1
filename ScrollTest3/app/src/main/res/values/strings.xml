@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Lands of Despair</string>
     <string name="przekroczonoZakres">Przekroczono Zakres!</string>
+    <string name="ruch">Ruch pozwala przemieścić sę postaci po polu bitwy o dystans 2 metrów (1 pole na planszy). Każdorazowe przestąpienie pola powoduje utratę 2 PA (Punktów Akcji).</string>
     <string name="title_activity_main_menu">MainMenu</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

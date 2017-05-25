@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context="com.example.daniel.scrolltest3.Karta1">
 
     <HorizontalScrollView
@@ -162,7 +164,7 @@
 
             <EditText
                 android:id="@+id/Znaki"
-                android:layout_width="102dp"
+                android:layout_width="302dp"
                 android:layout_height="28dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
@@ -529,6 +531,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/black"
+                android:textColorHint="@android:color/black"
                 android:id="@+id/counterTextViewAll"
                 android:text="0"
                 android:textSize="10dp"
@@ -549,8 +552,9 @@
                 android:layout_marginTop="439dp"
                 android:background="@android:color/transparent"
                 android:textColor="@android:color/black"
+                android:textColorHint="@android:color/black"
                 android:ems="10"
-                android:hint="Aktualne Punkty"
+                android:hint="Wprowadź"
                 android:textAlignment="center"
                 android:inputType="number"
                 android:textSize="10dp" />
@@ -567,8 +571,9 @@
                 android:layout_marginTop="469dp"
                 android:background="@android:color/transparent"
                 android:textColor="@android:color/black"
+                android:textColorHint="@android:color/black"
                 android:ems="10"
-                android:hint="Całkowite Doświadczneie"
+                android:hint="Wprowadź"
                 android:textAlignment="center"
                 android:inputType="number"
                 android:textSize="10dp" />
@@ -3576,6 +3581,20 @@
                 android:scaleY="0.5"
                 android:text="" />
 
+
+            <ImageView
+                android:id="@+id/ImageUploaded"
+                android:layout_width="213dp"
+                android:layout_height="245dp"
+                android:layout_marginLeft="124dp"
+                android:layout_marginStart="190dp"
+                android:layout_marginTop="295dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:visibility="visible"
+                android:clickable="true"
+                android:onClick="GalleryOpen"/>
+
         </RelativeLayout>
     </ScrollView>
     </HorizontalScrollView>
@@ -3596,6 +3615,37 @@
         app:rippleColor="@android:color/white"
         app:srcCompat="@android:drawable/ic_menu_revert" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/Image"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="500dp"
+        android:clickable="true"
+        android:onClick="GalleryOpen"
+        android:scaleType="center"
+        app:backgroundTint="@android:color/darker_gray"
+        app:fabSize="normal"
+        app:rippleColor="@android:color/white"
+        app:srcCompat="@drawable/ic_menu_gallery" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/ImageDelete"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="500dp"
+        android:clickable="true"
+        android:onClick="ImageDelete"
+        android:scaleType="center"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        app:backgroundTint="@android:color/darker_gray"
+        app:fabSize="normal"
+        app:rippleColor="@android:color/white"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
 
     <Button
         android:id="@+id/savebutton"
@@ -3611,5 +3661,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="15dp"
         android:layout_marginEnd="15dp" />
+
+
+
 
 </RelativeLayout>
