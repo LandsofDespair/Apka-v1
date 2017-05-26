@@ -3616,6 +3616,24 @@
         app:srcCompat="@android:drawable/ic_menu_revert" />
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/wytrzymaloscbutton"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="500dp"
+        android:clickable="true"
+        android:onClick="wytrzymalosc"
+        android:scaleType="center"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        app:backgroundTint="@android:color/darker_gray"
+        app:fabSize="normal"
+        app:rippleColor="@android:color/white"
+        app:srcCompat="@android:drawable/ic_menu_send" />
+
+    <android.support.design.widget.FloatingActionButton
         android:id="@+id/Image"
         android:layout_width="40dp"
         android:layout_height="wrap_content"

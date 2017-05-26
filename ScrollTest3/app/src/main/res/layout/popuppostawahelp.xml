@@ -19,7 +19,12 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Atak pozwala wyprowadzić cios przy użyciu broni białej. Zasięg oraz obrażenia zadawane w wyniku wykonania ów akcji są zależneod oręża oraz stopnia rozwinięcia atrybutów Bohatera." />
+                android:text="Przyjęcie postawy umożliwia Bohaterowi reagowanie na posunięcia przeciwników podczas ich tur.
+Wyróżnia się postawy:
+Obronna - Bohater może wykonywać testy Obrony przed każdym nadchodzącym atakiem do czasu nadejścia jego kolenej
+tury.
+Kontratak - Bohater moze wykonywać teesty kontrataku przed każdym nadchodzącym ciosem do czasu nadejscia jego kolejnej tury.
+Otrzymuje ilość kości Testu równą połowie sukcesów kości Ataku przeciwnika wyprowadzającego weń cios. Każdy sukces na kościach Testu obfituje w odparcie jednej kości Ataku przeciwnik oraz kontratak." />
             <Button
                 android:id="@+id/dismiss"
                 android:layout_width="fill_parent"

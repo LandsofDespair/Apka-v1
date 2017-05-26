@@ -19,7 +19,9 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Atak pozwala wyprowadzić cios przy użyciu broni białej. Zasięg oraz obrażenia zadawane w wyniku wykonania ów akcji są zależneod oręża oraz stopnia rozwinięcia atrybutów Bohatera." />
+                android:text="Akcja odepchnięcie umożliwia pchnięcie przeciwnika (powoduje przemieszczenie figury oponenta). Należy
+wykonać test Siły (Przyznaje się kość testu za każdy poziom rozwinięcia Atrybutu Siła). Jeden sukces pozwala odepchnąć przeciwnika
+w Lekkim pancerzu, dwa w Srednim, natomiast trzy w Ciężkim. Każda kość sukcesu ponad próg pozwala odepchnąć cel o jedno pole dalej." />
             <Button
                 android:id="@+id/dismiss"
                 android:layout_width="fill_parent"

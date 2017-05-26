@@ -19,7 +19,9 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Atak pozwala wyprowadzić cios przy użyciu broni białej. Zasięg oraz obrażenia zadawane w wyniku wykonania ów akcji są zależneod oręża oraz stopnia rozwinięcia atrybutów Bohatera." />
+                android:text="Akcja Skok pozwala Bohaterowi przeskoczyć nad przepaściami, pułapkami lub niskimi elementami otoczenia.
+Trzeci poziom rozwinięcia atrubutu Zręczność pozwala wydłużyć pokonywany skokiem dystans o 2m (jedno pole na planszy). Skok może być
+użyty tylko raz podczas tury Bohatera!" />
             <Button
                 android:id="@+id/dismiss"
                 android:layout_width="fill_parent"

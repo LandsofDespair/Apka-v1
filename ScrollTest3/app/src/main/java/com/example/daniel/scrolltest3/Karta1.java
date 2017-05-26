@@ -2069,9 +2069,9 @@ public class Karta1 extends AppCompatActivity implements View.OnClickListener {
         counterTextViewCha.setText(String.valueOf(counterValueCha));
     }
 
-//Nabijanie value Experience
     public void reverse(View view) {startActivity(new Intent(this,Karta1_2.class));}
 
+    public void wytrzymalosc(View view) {startActivity(new Intent(this,Karta1_Wytrzymalosc.class));}
 
     @Override
     public void onClick(View v) {

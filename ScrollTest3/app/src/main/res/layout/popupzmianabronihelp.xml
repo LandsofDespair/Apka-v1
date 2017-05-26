@@ -19,7 +19,7 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Atak pozwala wyprowadzić cios przy użyciu broni białej. Zasięg oraz obrażenia zadawane w wyniku wykonania ów akcji są zależneod oręża oraz stopnia rozwinięcia atrybutów Bohatera." />
+                android:text="Akcja ta pozwala Bohaterowi zmienić rodzaj używanego aktualnie oręża." />
             <Button
                 android:id="@+id/dismiss"
                 android:layout_width="fill_parent"
