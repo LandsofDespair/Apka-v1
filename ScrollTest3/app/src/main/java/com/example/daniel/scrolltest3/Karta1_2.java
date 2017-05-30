@@ -2062,6 +2062,279 @@ public class Karta1_2 extends AppCompatActivity {
             InputPlecak18Waga.close();
             Plecak18Waga.setText(Plecak18WagaS);
 
+            FileInputStream fileIninputPozywytna1 = openFileInput("Pozywytna1.txt");
+            InputStreamReader InputPozywytna1 = new InputStreamReader(fileIninputPozywytna1);
+
+            String Pozywytna1S = "";
+            while ((charRead = InputPozywytna1.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Pozywytna1S += readstring;
+            }
+
+            InputPozywytna1.close();
+            Pozywytna1.setText(Pozywytna1S);
+
+            FileInputStream fileIninputPozywytna2 = openFileInput("Pozywytna2.txt");
+            InputStreamReader InputPozywytna2 = new InputStreamReader(fileIninputPozywytna2);
+
+            String Pozywytna2S = "";
+            while ((charRead = InputPozywytna2.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Pozywytna2S += readstring;
+            }
+
+            InputPozywytna2.close();
+            Pozywytna2.setText(Pozywytna2S);
+
+            FileInputStream fileIninputPozywytna3 = openFileInput("Pozywytna3.txt");
+            InputStreamReader InputPozywytna3 = new InputStreamReader(fileIninputPozywytna3);
+
+            String Pozywytna3S = "";
+            while ((charRead = InputPozywytna3.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Pozywytna3S += readstring;
+            }
+
+            InputPozywytna3.close();
+            Pozywytna3.setText(Pozywytna3S);
+
+            FileInputStream fileIninputPozywytna4 = openFileInput("Pozywytna4.txt");
+            InputStreamReader InputPozywytna4 = new InputStreamReader(fileIninputPozywytna4);
+
+            String Pozywytna4S = "";
+            while ((charRead = InputPozywytna4.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Pozywytna4S += readstring;
+            }
+
+            InputPozywytna4.close();
+            Pozywytna4.setText(Pozywytna4S);
+
+            FileInputStream fileIninputPozywytna5 = openFileInput("Pozywytna5.txt");
+            InputStreamReader InputPozywytna5 = new InputStreamReader(fileIninputPozywytna5);
+
+            String Pozywytna5S = "";
+            while ((charRead = InputPozywytna5.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Pozywytna5S += readstring;
+            }
+
+            InputPozywytna5.close();
+            Pozywytna5.setText(Pozywytna5S);
+
+            FileInputStream fileIninputPozywytna6 = openFileInput("Pozywytna6.txt");
+            InputStreamReader InputPozywytna6 = new InputStreamReader(fileIninputPozywytna6);
+
+            String Pozywytna6S = "";
+            while ((charRead = InputPozywytna6.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Pozywytna6S += readstring;
+            }
+
+            InputPozywytna6.close();
+            Pozywytna6.setText(Pozywytna6S);
+
+            FileInputStream fileIninputPozywytna7 = openFileInput("Pozywytna7.txt");
+            InputStreamReader InputPozywytna7 = new InputStreamReader(fileIninputPozywytna7);
+
+            String Pozywytna7S = "";
+            while ((charRead = InputPozywytna7.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Pozywytna7S += readstring;
+            }
+
+            InputPozywytna7.close();
+            Pozywytna7.setText(Pozywytna7S);
+
+            FileInputStream fileIninputPozywytna8 = openFileInput("Pozywytna8.txt");
+            InputStreamReader InputPozywytna8 = new InputStreamReader(fileIninputPozywytna8);
+
+            String Pozywytna8S = "";
+            while ((charRead = InputPozywytna8.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Pozywytna8S += readstring;
+            }
+
+            InputPozywytna8.close();
+            Pozywytna8.setText(Pozywytna8S);
+
+            FileInputStream fileIninputPozywytna9 = openFileInput("Pozywytna9.txt");
+            InputStreamReader InputPozywytna9 = new InputStreamReader(fileIninputPozywytna9);
+
+            String Pozywytna9S = "";
+            while ((charRead = InputPozywytna9.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Pozywytna9S += readstring;
+            }
+
+            InputPozywytna9.close();
+            Pozywytna9.setText(Pozywytna9S);
+
+            FileInputStream fileIninputPozywytna10 = openFileInput("Pozywytna10.txt");
+            InputStreamReader InputPozywytna10 = new InputStreamReader(fileIninputPozywytna10);
+
+            String Pozywytna10S = "";
+            while ((charRead = InputPozywytna10.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Pozywytna10S += readstring;
+            }
+
+            InputPozywytna10.close();
+            Pozywytna10.setText(Pozywytna10S);
+
+            FileInputStream fileIninputNegatywna1 = openFileInput("Negatywna1.txt");
+            InputStreamReader InputNegatywna1 = new InputStreamReader(fileIninputNegatywna1);
+
+            String Negatywna1S = "";
+            while ((charRead = InputNegatywna1.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Negatywna1S += readstring;
+            }
+
+            InputNegatywna1.close();
+            Negatywna1.setText(Negatywna1S);
+
+            FileInputStream fileIninputNegatywna2 = openFileInput("Negatywna2.txt");
+            InputStreamReader InputNegatywna2 = new InputStreamReader(fileIninputNegatywna2);
+
+            String Negatywna2S = "";
+            while ((charRead = InputNegatywna2.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Negatywna2S += readstring;
+            }
+
+            InputNegatywna2.close();
+            Negatywna2.setText(Negatywna2S);
+
+            FileInputStream fileIninputNegatywna3 = openFileInput("Negatywna3.txt");
+            InputStreamReader InputNegatywna3 = new InputStreamReader(fileIninputNegatywna3);
+
+            String Negatywna3S = "";
+            while ((charRead = InputNegatywna3.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Negatywna3S += readstring;
+            }
+
+            InputNegatywna3.close();
+            Negatywna3.setText(Negatywna3S);
+
+            FileInputStream fileIninputNegatywna4 = openFileInput("Negatywna4.txt");
+            InputStreamReader InputNegatywna4 = new InputStreamReader(fileIninputNegatywna4);
+
+            String Negatywna4S = "";
+            while ((charRead = InputNegatywna4.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Negatywna4S += readstring;
+            }
+
+            InputNegatywna4.close();
+            Negatywna4.setText(Negatywna4S);
+
+            FileInputStream fileIninputNegatywna5 = openFileInput("Negatywna5.txt");
+            InputStreamReader InputNegatywna5 = new InputStreamReader(fileIninputNegatywna5);
+
+            String Negatywna5S = "";
+            while ((charRead = InputNegatywna5.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Negatywna5S += readstring;
+            }
+
+            InputNegatywna5.close();
+            Negatywna5.setText(Negatywna5S);
+
+            FileInputStream fileIninputNegatywna6 = openFileInput("Negatywna6.txt");
+            InputStreamReader InputNegatywna6 = new InputStreamReader(fileIninputNegatywna6);
+
+            String Negatywna6S = "";
+            while ((charRead = InputNegatywna6.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Negatywna6S += readstring;
+            }
+
+            InputNegatywna6.close();
+            Negatywna6.setText(Negatywna6S);
+
+            FileInputStream fileIninputNegatywna7 = openFileInput("Negatywna7.txt");
+            InputStreamReader InputNegatywna7 = new InputStreamReader(fileIninputNegatywna7);
+
+            String Negatywna7S = "";
+            while ((charRead = InputNegatywna7.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Negatywna7S += readstring;
+            }
+
+            InputNegatywna7.close();
+            Negatywna7.setText(Negatywna7S);
+
+            FileInputStream fileIninputNegatywna8 = openFileInput("Negatywna8.txt");
+            InputStreamReader InputNegatywna8 = new InputStreamReader(fileIninputNegatywna8);
+
+            String Negatywna8S = "";
+            while ((charRead = InputNegatywna8.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Negatywna8S += readstring;
+            }
+
+            InputNegatywna8.close();
+            Negatywna8.setText(Negatywna8S);
+
+            FileInputStream fileIninputNegatywna9 = openFileInput("Negatywna9.txt");
+            InputStreamReader InputNegatywna9 = new InputStreamReader(fileIninputNegatywna9);
+
+            String Negatywna9S = "";
+            while ((charRead = InputNegatywna9.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Negatywna9S += readstring;
+            }
+
+            InputNegatywna9.close();
+            Negatywna9.setText(Negatywna9S);
+
+            FileInputStream fileIninputNegatywna10 = openFileInput("Negatywna10.txt");
+            InputStreamReader InputNegatywna10 = new InputStreamReader(fileIninputNegatywna10);
+
+            String Negatywna10S = "";
+            while ((charRead = InputNegatywna10.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                Negatywna10S += readstring;
+            }
+
+            InputNegatywna10.close();
+            Negatywna10.setText(Negatywna10S);
+
+            FileInputStream fileIninputNotatki = openFileInput("Notatki.txt");
+            InputStreamReader InputNotatki = new InputStreamReader(fileIninputNotatki);
+
+            String NotatkiS = "";
+            while ((charRead = InputNotatki.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                NotatkiS += readstring;
+            }
+
+            InputNotatki.close();
+            Notatki.setText(NotatkiS);
+
     } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

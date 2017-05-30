@@ -24,6 +24,24 @@
                 android:layout_height="wrap_content" >
 
                 <CheckBox
+                    android:id="@+id/Weapon1Durability1"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textColor="@android:color/black"
+                    android:buttonTint="@android:color/black"
+                    android:layout_marginBottom="152dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="554dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="232dp"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:text=""
+                    android:background="#000"/>
+
+                <CheckBox
                     android:id="@+id/MalaSakwaCheckbox"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -2483,12 +2501,6 @@
         app:fabSize="normal"
         app:rippleColor="@android:color/white"
         app:srcCompat="@android:drawable/ic_menu_revert" />
-
-    <Button
-        android:id="@+id/openpopup"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Open Popup Window" />
 
     <Button
         android:id="@+id/savebutton"
